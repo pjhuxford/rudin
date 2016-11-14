@@ -4,8 +4,20 @@ Unless the contrary is explicitly stated, all numbers that are mentioned in thes
 
 \begin{questions}
   \question If $r$ is rational ($r\neq0$) and $x$ is irrational, prove that $r+x$ and $rx$ are irrational.
+  \begin{solution}
+    If $r+x$ were rational, then so too would be $(-r)+(r+x)=x$. If $rx$ were rational, then since $r\neq0$, $(1/r)\cdot(rx)=x$ would also be rational.
+
+    As $x$ is irrational, it follows that $r+x$ and $rx$ are irrational too.
+  \end{solution}
 
   \question Prove that there is no rational number whose square is 12.
+  \begin{solution}
+    Suppose there was a rational $r$ satisfying $r^2=12$. Then we may write $r=m/n$ where $m$ and $n$ are integers that are not both multiples of 3. The integers $m,n$ satisfy
+    \[ m^2 = 12n^2.. \]
+    Hence $m^2$ is a multiple of 3. Since 3 is prime it follows that $m$ is a multiple of 3. Similarly we may deduce that $m$ is a multiple of 2. Hence $m$ is a multiple of 6, so we may write $m=6k$ where $k$ is an integer. This yields
+    \[ 36k^2 = 12n^2 \implies 3k^2 = n^2. \]
+    Then $n^2$ is a multiple of 3, so that $n$ is a multiple of 3. This contradicts our choice of $m$ and $n$. Hence can be no rational number whose square is 12.
+  \end{solution}
 
   \question Prove Proposition 1.15: The axioms for multiplication imply the following statements.
   \begin{parts}
@@ -17,11 +29,32 @@ Unless the contrary is explicitly stated, all numbers that are mentioned in thes
 
     \part If $x\neq0$ then $1/(1/x)=x$.
   \end{parts}
+  \begin{solution}
+    If $x\neq0$ and $xy=xz$, the axioms for multiplication give
+    \begin{align*}
+      y = 1\cdot y &= \left( \frac{1}{x}\cdot x \right)y = \frac{1}{x}\cdot(xy) \\
+                   &= \frac{1}{x}\cdot(xz) = \left(\frac{1}{x}\cdot x\right)z = 1\cdot z = z.
+    \end{align*}
+    This proves (a). Take $z=1$ in (a) to obtain (b). Take $z=1/x$ in (a) to obtain (c). Since $(1/x)\cdot x=1$, (c) (with $1/x$ in place of $x$, and $x$ in place of $y$) gives (d).
+  \end{solution}
 
   \question Let $E$ be a nonempty subset of an ordered set; suppose $\alpha$ is a lower bound of $E$ and $\beta$ is an upper bound of $E$. Prove that $\alpha\leq\beta$.
+  \begin{solution}
+    Let $x\in E$, then $\alpha \leq x$, since $\alpha$ is a lower bound of $E$, and $x\leq \beta$, since $\beta$ is an upper bound of $E$. If $\alpha=x$ then from $x\leq\beta$ we see $\alpha\leq\beta$. Similarly if $x=\beta$ then from $\alpha\leq x$ we see $\alpha\leq\beta$.
+
+    If neither $\alpha=x$ nor $x=\beta$ hold, then $\alpha<x$ and $x<\beta$, in which case it follows from the definition of an ordered set that $\alpha<\beta$. Hence in all cases, $\alpha\leq\beta$.
+  \end{solution}
 
   \question Let $A$ be a nonempty set of real numbers which is bounded below. Let $-A$ be the set of all numbers $-x$, where $x\in A$. Prove that
   \[ \inf A = -\sup(-A). \]
+  \begin{solution}
+    Let $x\in A$, then $-x\in-A$, hence
+    \[ -x \leq \sup(-A) \implies -\sup(-A) \leq x. \]
+    Therefore $-\sup(-A)$ is a lower bound of $A$. Let $\alpha>-\sup(-A)$, then $-\alpha<\sup(-A)$. Hence $-\alpha$ is not an upper bound of $-A$. All elements of $-A$ have the form $-x$ for some $x\in A$, so there exists some $x\in A$ for which
+    \[ -\alpha < -x \implies x < \alpha. \]
+    Therefore $\alpha$ is not a lower bound of $A$. It follows that
+    \[ \inf A = -\sup(-A). \]
+  \end{solution}
 
   \question Fix $b>1$.
   \begin{parts}
