@@ -1,1 +1,109 @@
 \section{The Real and Complex Number Systems}
+
+Unless the contrary is explicitly stated, all numbers that are mentioned in these exercises are understood to be real.
+
+\begin{questions}
+  \question If $r$ is rational ($r\neq0$) and $x$ is irrational, prove that $r+x$ and $rx$ are irrational.
+
+  \question Prove that there is no rational number whose square is 12.
+
+  \question Prove Proposition 1.15: The axioms for multiplication imply the following statements.
+  \begin{parts}
+    \part If $x\neq0$ and $xy=xz$ then $y=z$.
+
+    \part If $x\neq0$ and $xy=x$ then $y=1$.
+
+    \part If $x\neq0$ and $xy=1$ then $y=1/x$.
+
+    \part If $x\neq0$ then $1/(1/x)=x$.
+  \end{parts}
+
+  \question Let $E$ be a nonempty subset of an ordered set; suppose $\alpha$ is a lower bound of $E$ and $\beta$ is an upper bound of $E$. Prove that $\alpha\leq\beta$.
+
+  \question Let $A$ be a nonempty set of real numbers which is bounded below. Let $-A$ be the set of all numbers $-x$, where $x\in A$. Prove that
+  \[ \inf A = -\sup(-A). \]
+
+  \question Fix $b>1$.
+  \begin{parts}
+    \part If $m$, $n$, $p$, $q$ are integers, $n>0$, $q>0$, and $r=m/n=p/q$, prove that
+    \[ (b^m)^{1/n} = (b^p)^{1/q}. \]
+    Hence it makes sense to define $b^r=(b^m)^{1/n}$.
+
+    \part Prove that $b^{r+s}=b^rb^s$ is $r$ and $s$ are rational.
+
+    \part If $x$ is real, define $B(x)$ to be the set of all numbers $b^t$, where $t$ is rational and $t\leq x$. Prove that
+    \[ b^r = \sup B(r) \]
+    when $r$ is rational. Hence it makes sense to define
+    \[ b^x = \sup B(x) \]
+    for every real $x$.
+
+    \part Prove that $b^{x+y}=b^xb^y$ for all real $x$ and $y$.
+  \end{parts}
+
+  \question Fix $b>1$, $y>0$, and prove that there is a unique real $x$ such that $b^x=y$, by completing the following outline. (This is called the logarithm of $y$ to the base $b$.)
+  \begin{parts}
+    \part For any positive integer $n$, $b^n-1\geq n(b-1)$.
+
+    \part Hence $b-1\geq n(b^{1/n}-1)$.
+
+    \part If $t>1$ and $n>(b-1)/(t-1)$, then $b^{1/n}<t$.
+
+    \part If $w$ is such that $b^w<y$, then $b^{w+(1/n)}<y$ for sufficiently large $n$; to see this, apply part (c) with $t=y\cdot b^{-w}$.
+
+    \part If $b^w>y$, then $b^{w-(1/n)}>y$ for sufficiently large $n$.
+
+    \part Let $A$ be the set of all $w$ such that $b^w<y$, and show that $x=\sup A$ satisfies $b^x=y$.
+
+    \part Prove that this $x$ is unique.
+  \end{parts}
+
+  \question Prove that no order can be defined in the complex field that turns it into an ordered field. \emph{Hint:} $-1$ is a square.
+
+  \question Suppose $z=a+bi$, $w=c+di$. Define $z<w$ if $a<c$, and also if $a=c$ but $b<d$. Prove that this turns the set of all complex numbers into an ordered set. (This type of order relation is called a \emph{dictionary order}, or \emph{lexicographic order}, for obvious reasons.) Does this ordered set have the least-upper-bound property?
+
+  \question Suppose $z=a+bi$, $w=u+iv$, and
+  \[ a = \left( \frac{\abs{w} + u}{2} \right)^{1/2}, \qquad b = \left( \frac{\abs{w} - u}{2} \right)^{1/2}. \]
+  Prove that $z^2=w$ if $v\geq0$ and that $(\conj{z})^2$ if $v\leq0$. Conclude that every complex number (with one exception!) has two complex square roots.
+
+  \question If $z$ is a complex number, prove that there exists an $r\geq0$ and a complex number $w$ with $\abs{w}=1$ such that $z=rw$. Are $w$ and $r$ always uniquely determined by $z$?
+
+  \question If $z_1,\ldots,z_n$ are complex, prove that
+  \[ \abs{z_1+z_2+\cdots+z_n} \leq \abs{z_1}+\abs{z_2}+\cdots+\abs{z_n}. \]
+
+  \question If $x,y$ are complex, prove that
+  \[ \abs{\abs{x} - \abs{y}} \leq \abs{x-y}. \]
+
+  \question If $z$ is a complex number such that $\abs{z}=1$, that is, such that $z\conj{z}=1$, compute
+  \[ \abs{1+z}^2 + \abs{1-z}^2. \]
+
+  \question Under what conditions does equality hold in the Schwarz inequality?
+
+  \question Suppose $k\geq3$, $\vect{x}, \vect{y}\in\R^k$, $\abs{\vect{x}-\vect{y}}=d>0$, and $r>0$. Prove:
+  \begin{parts}
+    \part If $2r>d$, there are infinitely many $\vect{z}\in\R^k$ such that
+    \[ \abs{\vect{z} - \vect{x}} = \abs{\vect{z} - \vect{y}} = r. \]
+
+    \part If $2r=d$, there is exactly one such $\vect{z}$.
+
+    \part If $2r<d$, there is no such $\vect{z}$.
+  \end{parts}
+  How must these statements be modified if $k$ is 2 or 1?
+
+  \question Prove that
+  \[ \abs{\vect{x} + \vect{y}}^2 + \abs{\vect{x} - \vect{y}}^2 = 2\abs{\vect{x}}^2 + 2\abs{\vect{y}}^2 \]
+  if $\vect{x}\in\R^k$ and $\vect{y}\in\R^k$. Interpret this geometrically, as a statement about parallelograms.
+
+  \question If $k\geq2$ and $\vect{x}\in\R^k$, prove that there exists $\vect{y}\in\R^k$ such that $\vect{y}\neq\vect{0}$ but $\vect{x}\cdot\vect{y}=0$. Is this also true if $k=1$?
+
+  \question Suppose $\vect{a}\in\R^k$, $\vect{b}\in\R^k$. Find $\vect{c}\in\R^k$ and $r>0$ such that
+  \[ \abs{\vect{x}-\vect{a}} = 2\abs{\vect{x}-\vect{b}} \]
+  if and only if $\abs{\vect{x}-\vect{c}}=r$.
+  (\emph{Solution:} $3\vect{c}=4\vect{b}-\vect{a}$, $3r=2\abs{\vect{b}-\vect{a}}$.)
+
+  \question With reference to the Appendix, suppose that property (III) were omitted from the definition of a cut. Keep the same definitions of order and addition. Show that the resulting ordered set has the least-upper-bound property, that addition satisfies the axioms (A1) to (A4) (with a slightly different zero-element!) but that (A5) fails.
+\end{questions}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "rudin"
+%%% End:
