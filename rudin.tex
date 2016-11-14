@@ -1,4 +1,4 @@
-\documentclass[answers,a4paper]{exam}
+\documentclass[answers,12pt,a4paper]{exam}
 
 % Packages
 
@@ -38,6 +38,9 @@
 
 %% Sections numbered with Chapter X
 \renewcommand{\thesection}{Chapter \arabic{section}}
+
+%% Bold question numbers
+\renewcommand{\thequestion}{\textbf{\arabic{question}}}
 
 %% The standard sets of numbers
 \newcommand{\C}{\mathbb{C}}
