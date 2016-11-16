@@ -61,14 +61,35 @@ Unless the contrary is explicitly stated, all numbers that are mentioned in thes
     \part If $m$, $n$, $p$, $q$ are integers, $n>0$, $q>0$, and $r=m/n=p/q$, prove that
     \[ (b^m)^{1/n} = (b^p)^{1/q}. \]
     Hence it makes sense to define $b^r=(b^m)^{1/n}$.
+    \begin{solution}
+      Let $y=(b^m)^{1/n}$ be the unique positive $n$th root of $b^m$. Then $y^n=b^m$, hence $y^{nq}=b^{mq}$. Since $m/n=p/q$, $mq=np$, therefore $b^{mq}=b^{np}$. It follows that $y^q$ and $b^p$ are both positive $n$th roots of the common number $y^{nq}=b^{np}$. As positive $n$th roots are unique, $y^q=b^p$, and so $y=(b^p)^{1/q}$.
+    \end{solution}
 
     \part Prove that $b^{r+s}=b^rb^s$ is $r$ and $s$ are rational.
+    \begin{solution}
+      Write $r$ and $s$ with a common positive denominator $d>0$, say $r=m/d$ and $s=n/d$, where $m$, $n$, and $d$ are all integers. Then
+      \begin{align*}
+        (b^rb^s)^d &= ((b^m)^{1/d}\cdot(b^n)^{1/d})^d \\
+                   &= ((b^m)^{1/d})^d\cdot((b^{n})^{1/d})^d = b^mb^n = b^{m+n}.
+      \end{align*}
+      Therefore $b^rb^s$ is the unique positive $d$th root of $b^{m+n}$, hence
+      \[ b^rb^s = (b^{m+n})^{1/d} = b^{(m+n)/d} = b^{r+s}. \]
+    \end{solution}
 
     \part If $x$ is real, define $B(x)$ to be the set of all numbers $b^t$, where $t$ is rational and $t\leq x$. Prove that
     \[ b^r = \sup B(r) \]
     when $r$ is rational. Hence it makes sense to define
     \[ b^x = \sup B(x) \]
     for every real $x$.
+    \begin{solution}
+      It suffices to show that $b^t\leq b^r$ for every rational $t\leq r$. Then $b^r$ will be an upper bound of $B(r)$, while also being an element of it, so it will follow that it is the least upper bound of $B(r)$.
+
+      Let $r,t$ be rationals with $t\leq r$. Write them with a common positive denominator $d>0$, say $r=m/d$ and $t=n/d$, where $m$, $n$, and $d$ are all integers. Then $m\geq n$, so $m-n\geq0$. An easy induction will verify that $b^{m-n}\geq1$ for any nonnegative integer value of $m-n$. Therefore
+      \[ b^m=b^n\cdot b^{m-n}\geq b^n. \]
+      Suppose for a contradiction that $b^t>b^r$, i.e. $(b^n)^{1/d}>(b^m)^{1/d}$. It follows by induction that
+      \[ ((b^n)^{1/d})^d>((b^m)^{1/d})^d \implies b^n > b^m, \]
+      which is a contradiction. Hence $b^t\leq b^r$, and so the result follows.
+    \end{solution}
 
     \part Prove that $b^{x+y}=b^xb^y$ for all real $x$ and $y$.
   \end{parts}
@@ -76,18 +97,59 @@ Unless the contrary is explicitly stated, all numbers that are mentioned in thes
   \question Fix $b>1$, $y>0$, and prove that there is a unique real $x$ such that $b^x=y$, by completing the following outline. (This is called the logarithm of $y$ to the base $b$.)
   \begin{parts}
     \part For any positive integer $n$, $b^n-1\geq n(b-1)$.
+    \begin{solution}
+      The result is clear when $n=1$. Suppose the result holds for some positive integer $n$, then since $b^n>1$ we have
+      \begin{align*}
+        b^{n+1}-1  &= b^n(b-1) + (b^n-1) \\
+                   &> (b-1)+n(b-1) \\
+                   &= (n+1)(b-1).
+      \end{align*}
+      By induction it follows that $b^n-1\geq n(b-1)$ for all positive integers $n$.
+    \end{solution}
 
     \part Hence $b-1\geq n(b^{1/n}-1)$.
+    \begin{solution}
+      Apply part (a) with $b^{1/n}$ in place of $b$.
+    \end{solution}
 
     \part If $t>1$ and $n>(b-1)/(t-1)$, then $b^{1/n}<t$.
+    \begin{solution}
+      Since $t-1>0$, multiplying both sides of $n>(b-1)/(t-1)$ by $t-1$, and applying (b) yields
+      \[ n(t-1) > (b-1) \geq n(b^{1/n}-1) \implies t-1 > b^{1/n} - 1. \]
+      Hence $b^{1/n}<t$.
+    \end{solution}
 
     \part If $w$ is such that $b^w<y$, then $b^{w+(1/n)}<y$ for sufficiently large $n$; to see this, apply part (c) with $t=y\cdot b^{-w}$.
+    \begin{solution}
+      By the archimedian property of $\R$, there exists a positive integer $N$ such that
+      \[ N(y-b^w) > b^w(b-1) \implies N > \frac{b-1}{y\cdot b^{-w} - 1}. \]
+      Then for all $n\geq N$, if we let $t=y\cdot b^{-w}$ then $n>(b-1)/(t-1)$, so by (c)
+      \[ b^{1/n} < y\cdot b^{-w} \implies b^{w+(1/n)} = b^{1/n}b^w < y. \]
+    \end{solution}
 
     \part If $b^w>y$, then $b^{w-(1/n)}>y$ for sufficiently large $n$.
+    \begin{solution}
+      We have $b^{-w}<y^{-1}$, so  from the previous part, $b^{-w+(1/n)}<y^{-1}$ for sufficiently large $n$. Hence $b^{w-(1/n)}>y$ for sufficiently large $n$.
+    \end{solution}
 
     \part Let $A$ be the set of all $w$ such that $b^w<y$, and show that $x=\sup A$ satisfies $b^x=y$.
+    \begin{solution}
+      Suppose $b^x<y$. By (d) there is a positive $n$ such that $b^{x+(1/n)}<y$, so that $x+(1/n)\in A$, which contradicts $x$ being an upper bound of $A$.
+
+      Suppose $b^x>y$. By (e) there is a positive $n$ with $b^{x-(1/n)}>y$, so that $b^{x-(1/n)}>b^w$ for all $w\in A$. Therefore $b^w$ is not an upper bound of $B(x-(1/n))$, for all $w\in A$. So for all $w\in A$ there is a $t\in \Q$ with $t\leq x-(1/n)$ such that
+      \[ b^t > b^w \implies t > w. \]
+
+      By the density of $\Q$ in $\R$ it follows that
+      \[ x-(1/n)=\sup\{t\in\Q \mid t\leq x-(1/n)\}. \]
+      Therefore $x-(1/n)\geq w$ for all $w\in A$, hence $x-(1/n)$ is an upper bound of $A$. This contradicts $x$ being the least upper bound of $A$. The only possibility which remains is $b^x=y$.
+    \end{solution}
 
     \part Prove that this $x$ is unique.
+    \begin{solution}
+      If $x>z$, then there exists a $t\in\Q$ with $0<t<x-z$, so that $b^t<b^{x-z}$. Since $t>0$ then $b^t>b^0=1$, hence
+      \[ b^x = b^{x-z}b^z > b^tb^z > b^z. \]
+      Similarly if $x<z$ then $b^x<b^z$. So if $b^x=y=b^z$ we must have $x=z$.
+    \end{solution}
   \end{parts}
 
   \question Prove that no order can be defined in the complex field that turns it into an ordered field. \emph{Hint:} $-1$ is a square.
