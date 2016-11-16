@@ -92,6 +92,34 @@ Unless the contrary is explicitly stated, all numbers that are mentioned in thes
     \end{solution}
 
     \part Prove that $b^{x+y}=b^xb^y$ for all real $x$ and $y$.
+    \begin{solution}
+      Define
+      \[ B(x,y)=\{b^rb^s \mid r,s\in\Q, r\leq x, s\leq y\}. \]
+      We claim that $b^xb^y=\sup B(x,y)$. Let $r,s\in\Q$ with $r\leq x$ and $s\leq y$, then certainly $0<b^r\leq b^x$ and $0<b^s\leq b^y$. Therefore $b^rb^s\leq b^xb^y$, so $b^xb^y$ is certainly an upper bound of $B(x,y)$. Now notice that for all $r,s\in\Q$ with $r\leq x$ and $s\leq y$, we have
+      \[ b^rb^s \leq \sup B(x,y) \implies b^r \leq \frac{1}{b^s} \sup B(x,y). \]
+      Hence for every $s\in\Q$ with $s\leq y$, $(1/b^s)\sup B(x,y)$ is an upper bound of $B(x)$. Therefore
+      \[ b^x \leq \frac{1}{b^s}\sup B(x,y) \implies b^s \leq \frac{1}{b^x}\sup B(x,y). \]
+      Hence $(1/b^x)\sup B(x,y)$ is an upper bound of $B(y)$, so
+      \[ b^y \leq \frac{1}{b^x}\sup B(x,y) \implies b^xb^y \leq \sup B(x,y). \]
+      Since $b^xb^y$ is an upper bound of $B(x,y)$, we must have $b^xb^y=\sup B(x,y)$.
+
+      Now if $r,s\in\Q$, $r\leq x$, and $s\leq y$, then certainly $r+s\in\Q$ and $r+s\leq x+y$. As $b^rb^s=b^{r+s}$ for all rational $r,s$, it follows that
+      \[ B(x,y) \subset B(x+y) \implies b^xb^y \leq b^{x+y}. \]
+
+      Now let us define
+      \[ B'(x+y) = \{ b^t \mid t\in\Q, t<x+y\}. \]
+      We claim that $b^{x+y}=\sup B'(x+y)$. Clearly $B'(x+y)\subset B(x+y)$, so $b^{x+y}$ is an upper bound of $B'(x+y)$. Let $z<b^{x+y}$. Then $z$ is not an upper bound of $B(x+y)$, so there exists a $t\in\Q$ with $t\leq x+y$ and $z<b^t$. By the archimedian property of $\R$ there is a positive integer $n$ such that
+      \[ n(b^t-z) > z(b-1) \implies n > \frac{b-1}{b^tz^{-1} - 1}. \]
+
+      Note that \textbf{7}.(c) can be completed without using \textbf{6}.(d). By \textbf{7}.(c) we have
+      \[ b^{1/n} < b^tz^{-1} \implies z < b^tb^{-1/n} = b^{t-(1/n)}. \]
+      Now $t-(1/n)<x+y$, hence $b^{t-(1/n)}\in B'(x+y)$. Therefore $z$ is not an upper bound of $B'(x+y)$. It follows that $b^{x+y}$ is the least upper bound of $B'(x+y)$.
+
+      Let $t\in\Q$, $t<x+y$. Then due to the density of $\Q$ in $\R$, there exist $r,s\in\Q$ such that
+      \[ x - \frac{1}{2}(x+y-t) < r < x, \qquad y - \frac{1}{2}(x+y-t) < s < y.  \]
+
+      Then $r<x$, $s<y$ and $t<r+s$. Hence $b^t<b^{r+s}=b^rb^s\in B(x,y)$. Hence $b^xb^y$ is an upper bound of $B'(x+y)$, and therefore $b^xb^y\geq b^{x+y}$. It follows that $b^{x+y}=b^xb^y$ for all real $x,y$.
+    \end{solution}
   \end{parts}
 
   \question Fix $b>1$, $y>0$, and prove that there is a unique real $x$ such that $b^x=y$, by completing the following outline. (This is called the logarithm of $y$ to the base $b$.)
