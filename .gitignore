@@ -178,3 +178,8 @@ TSWLatexianTemp*
 
 # KBibTeX
 *~[0-9]*
+
+# Emacs generated files
+/_region_.tex
+/_region_.prv/
+/auto/
