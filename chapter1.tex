@@ -260,6 +260,18 @@ Unless the contrary is explicitly stated, all numbers that are mentioned in thes
   \end{solution}
 
   \question Under what conditions does equality hold in the Schwarz inequality?
+  \begin{solution}
+    The Schwarz inequality states that if $a_1,a_2\ldots,a_n$ and $b_1,b_2\ldots,b_n$ are complex numbers, then
+    \[ \abs*{\sum_{j=1}^n a_j\conj{b_j}}^2 \leq \sum_{j=1}^n \abs{a_j}^2 \sum_{j=1}^n \abs{b_j}^2. \]
+
+    We claim that equality holds precisely when either $b_1=b_2=\cdots=b_n=0$, or there exists a $\lambda\in\C$ such that $a_1=\lambda b_1$, $a_2=\lambda b_2$ \ldots, $a_n=\lambda b_n$. Clearly equality holds in the first case, so suppose not all of $b_1,b_2,\ldots,b_n$ are zero. The given proof of the inequality defines
+    \[ A = \sum_{j=1}^n \abs{a_j}^2, \ B = \sum_{j=1}^n \abs{b_j}^2, \ C = \sum_{j=1}^n a_j\conj{b_j}, \]
+    and proceeds to show that
+    \[ \sum_{i=1}^n \abs{Ba_i-Cb_i}^2 = B(AB-\abs{C}^2). \]
+    Since $B>0$ it follows that $\abs{C}^2\leq AB$, which is precisely the inequality. Now equality holds if and only if $Ba_i=Cb_i$ for each $i=1,\ldots,n$. Since $B>0$ we can define $\lambda = C/B$, and then $a_i=\lambda b_i$ for each $i=1,\ldots,n$. Conversely, suppose there is a $\lambda\in\C$ such that $a_i=\lambda b_i$ for each $i=1,\ldots,n$. Then
+    \[ Ba_i = a_i\sum_{j=1}^n \abs{\lambda a_j}^2 = \conj{\lambda}\lambda a_i \sum_{j=1}^n a_j\conj{a_j} = b_i\sum_{j=1}^n a_j(\conj{\lambda a_j}) = Cb_i, \]
+    and so equality holds. This proves the claim.
+  \end{solution}
 
   \question Suppose $k\geq3$, $\vect{x}, \vect{y}\in\R^k$, $\abs{\vect{x}-\vect{y}}=d>0$, and $r>0$. Prove:
   \begin{parts}
