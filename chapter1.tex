@@ -283,6 +283,22 @@ Unless the contrary is explicitly stated, all numbers that are mentioned in thes
     \part If $2r<d$, there is no such $\vect{z}$.
   \end{parts}
   How must these statements be modified if $k$ is 2 or 1?
+  \begin{solution}
+    Suppose that $\vect{z}$ satisfies $\abs{\vect{z}-\vect{x}}=\abs{\vect{z}-\vect{y}}=r$. Then the Schwarz inequality gives
+    \begin{align*}
+      d^2 = \abs{\vect{x}-\vect{y}}^2 &= \abs{(\vect{x}-\vect{z}) + (\vect{z}-\vect{y})}^2 \\
+                                      &= \abs{\vect{x}-\vect{z}}^2 + 2(\vect{x}-\vect{z})\cdot(\vect{z}-\vect{y}) + \abs{\vect{z}-\vect{y}}^2 \\
+                                      &\leq \abs{\vect{x}-\vect{z}}^2 + 2\abs{\vect{x}-\vect{z}}\abs{\vect{z}-\vect{y}} + \abs{\vect{z}-\vect{y}}^2 \\
+                                      &= (2r)^2.
+    \end{align*}
+    Hence if there are any $\vect{z}$ satisfying the equation, then $d\leq2r$, which answers (c).
+
+    If $2r=d$ then equality must hold in the above application of the Schwarz inequality. By \textbf{15}., since $r>0$ we conclude there is a $\lambda\in\R$ with $\vect{x}-\vect{z}=\lambda(\vect{z}-\vect{y})$. Then
+    \[ r = \abs{\lambda(\vect{z}-\vect{y})} = \abs{\vect{z}-\vect{y}} \implies \abs{\lambda}=1. \]
+    If $\lambda=-1$, then $\vect{x}=\vect{y}$, contradicting $d>0$. Hence $\lambda=1$, and so $\vect{z}=(\vect{x}+\vect{y})/2$. So if $2r=d$, there is precisely one such $\vect{z}$, which answers (b).
+
+    The statements in (b) and (c) need not be modified if $k$ is 2 or 1.
+  \end{solution}
 
   \question Prove that
   \[ \abs{\vect{x} + \vect{y}}^2 + \abs{\vect{x} - \vect{y}}^2 = 2\abs{\vect{x}}^2 + 2\abs{\vect{y}}^2 \]
