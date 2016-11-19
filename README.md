@@ -13,7 +13,7 @@ To format the exercises and their solutions, we are using the exam document clas
 
 The structure of a chapter file will be as follows
 
-'''
+```
 \section{Chapter Title}
 
 \begin{questions}
@@ -29,7 +29,7 @@ The structure of a chapter file will be as follows
   Solution to final exercise
 \end{solution}
 \end{questions}
-'''
+```
 
 Please note that indentation is using two spaces -- please change the settings in your editor appropriately (i.e. don't use TABs).
 
