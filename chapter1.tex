@@ -273,71 +273,71 @@ Unless the contrary is explicitly stated, all numbers that are mentioned in thes
     and so equality holds. This proves the claim.
   \end{solution}
 
-  \question Suppose $k\geq3$, $\vect{x}, \vect{y}\in\R^k$, $\abs{\vect{x}-\vect{y}}=d>0$, and $r>0$. Prove:
+  \question Suppose $k\geq3$, $\vec{x}, \vec{y}\in\R^k$, $\abs{\vec{x}-\vec{y}}=d>0$, and $r>0$. Prove:
   \begin{parts}
-    \part If $2r>d$, there are infinitely many $\vect{z}\in\R^k$ such that
-    \[ \abs{\vect{z} - \vect{x}} = \abs{\vect{z} - \vect{y}} = r. \]
+    \part If $2r>d$, there are infinitely many $\vec{z}\in\R^k$ such that
+    \[ \abs{\vec{z} - \vec{x}} = \abs{\vec{z} - \vec{y}} = r. \]
 
-    \part If $2r=d$, there is exactly one such $\vect{z}$.
+    \part If $2r=d$, there is exactly one such $\vec{z}$.
 
-    \part If $2r<d$, there is no such $\vect{z}$.
+    \part If $2r<d$, there is no such $\vec{z}$.
   \end{parts}
   How must these statements be modified if $k$ is 2 or 1?
   \begin{solution}
-    Suppose that $\vect{z}$ satisfies $\abs{\vect{z}-\vect{x}}=\abs{\vect{z}-\vect{y}}=r$. Then the Schwarz inequality gives
+    Suppose that $\vec{z}$ satisfies $\abs{\vec{z}-\vec{x}}=\abs{\vec{z}-\vec{y}}=r$. Then the Schwarz inequality gives
     \begin{align*}
-      d^2 = \abs{\vect{x}-\vect{y}}^2 &= \abs{(\vect{x}-\vect{z}) + (\vect{z}-\vect{y})}^2 \\
-                                      &= \abs{\vect{x}-\vect{z}}^2 + 2(\vect{x}-\vect{z})\cdot(\vect{z}-\vect{y}) + \abs{\vect{z}-\vect{y}}^2 \\
-                                      &\leq \abs{\vect{x}-\vect{z}}^2 + 2\abs{\vect{x}-\vect{z}}\abs{\vect{z}-\vect{y}} + \abs{\vect{z}-\vect{y}}^2 \\
+      d^2 = \abs{\vec{x}-\vec{y}}^2 &= \abs{(\vec{x}-\vec{z}) + (\vec{z}-\vec{y})}^2 \\
+                                      &= \abs{\vec{x}-\vec{z}}^2 + 2(\vec{x}-\vec{z})\cdot(\vec{z}-\vec{y}) + \abs{\vec{z}-\vec{y}}^2 \\
+                                      &\leq \abs{\vec{x}-\vec{z}}^2 + 2\abs{\vec{x}-\vec{z}}\abs{\vec{z}-\vec{y}} + \abs{\vec{z}-\vec{y}}^2 \\
                                       &= (2r)^2.
     \end{align*}
-    Hence if there are any $\vect{z}$ satisfying the equation, then $d\leq2r$, which answers (c).
+    Hence if there are any $\vec{z}$ satisfying the equation, then $d\leq2r$, which answers (c).
 
-    If $2r=d$ then equality must hold in the above application of the Schwarz inequality. By \textbf{15}., since $r>0$ we conclude there is a $\lambda\in\R$ with $\vect{x}-\vect{z}=\lambda(\vect{z}-\vect{y})$. Then
-    \[ r = \abs{\lambda(\vect{z}-\vect{y})} = \abs{\vect{z}-\vect{y}} \implies \abs{\lambda}=1. \]
-    If $\lambda=-1$, then $\vect{x}=\vect{y}$, contradicting $d>0$. Hence $\lambda=1$, and so $\vect{z}=(\vect{x}+\vect{y})/2$. So if $2r=d$, there is precisely one such $\vect{z}$, which answers (b).
+    If $2r=d$ then equality must hold in the above application of the Schwarz inequality. By \textbf{15}., since $r>0$ we conclude there is a $\lambda\in\R$ with $\vec{x}-\vec{z}=\lambda(\vec{z}-\vec{y})$. Then
+    \[ r = \abs{\lambda(\vec{z}-\vec{y})} = \abs{\vec{z}-\vec{y}} \implies \abs{\lambda}=1. \]
+    If $\lambda=-1$, then $\vec{x}=\vec{y}$, contradicting $d>0$. Hence $\lambda=1$, and so $\vec{z}=(\vec{x}+\vec{y})/2$. So if $2r=d$, there is precisely one such $\vec{z}$, which answers (b).
 
     The statements in (b) and (c) need not be modified if $k$ is 2 or 1.
   \end{solution}
 
   \question Prove that
-  \[ \abs{\vect{x} + \vect{y}}^2 + \abs{\vect{x} - \vect{y}}^2 = 2\abs{\vect{x}}^2 + 2\abs{\vect{y}}^2 \]
-  if $\vect{x}\in\R^k$ and $\vect{y}\in\R^k$. Interpret this geometrically, as a statement about parallelograms.
+  \[ \abs{\vec{x} + \vec{y}}^2 + \abs{\vec{x} - \vec{y}}^2 = 2\abs{\vec{x}}^2 + 2\abs{\vec{y}}^2 \]
+  if $\vec{x}\in\R^k$ and $\vec{y}\in\R^k$. Interpret this geometrically, as a statement about parallelograms.
   \begin{solution}
     \begin{align*}
-      \abs{\vect{x}+\vect{y}}^2 + \abs{\vect{x}-\vect{y}}^2 &= (\vect{x}+\vect{y})\cdot(\vect{x}+\vect{y}) + (\vect{x}-\vect{y})\cdot(\vect{x}-\vect{y}) \\
-                                                            &= (\vect{x}\cdot\vect{x} + 2\vect{x}\cdot\vect{y} + \vect{y}\cdot\vect{y}) + (\vect{x}\cdot\vect{x} - 2\vect{x}\cdot\vect{y} + \vect{y}\cdot\vect{y}) \\
-                                                            &= 2\vect{x}\cdot\vect{x} + 2\vect{y}\cdot\vect{y} \\
-                                                            &= 2\abs{\vect{x}}^2 + 2\abs{\vect{y}}^2.
+      \abs{\vec{x}+\vec{y}}^2 + \abs{\vec{x}-\vec{y}}^2 &= (\vec{x}+\vec{y})\cdot(\vec{x}+\vec{y}) + (\vec{x}-\vec{y})\cdot(\vec{x}-\vec{y}) \\
+                                                            &= (\vec{x}\cdot\vec{x} + 2\vec{x}\cdot\vec{y} + \vec{y}\cdot\vec{y}) + (\vec{x}\cdot\vec{x} - 2\vec{x}\cdot\vec{y} + \vec{y}\cdot\vec{y}) \\
+                                                            &= 2\vec{x}\cdot\vec{x} + 2\vec{y}\cdot\vec{y} \\
+                                                            &= 2\abs{\vec{x}}^2 + 2\abs{\vec{y}}^2.
     \end{align*}
   \end{solution}
 
-  \question If $k\geq2$ and $\vect{x}\in\R^k$, prove that there exists $\vect{y}\in\R^k$ such that $\vect{y}\neq\vect{0}$ but $\vect{x}\cdot\vect{y}=0$. Is this also true if $k=1$?
+  \question If $k\geq2$ and $\vec{x}\in\R^k$, prove that there exists $\vec{y}\in\R^k$ such that $\vec{y}\neq\vec{0}$ but $\vec{x}\cdot\vec{y}=0$. Is this also true if $k=1$?
   \begin{solution}
-    Suppose that $\vect{x}=(x_1,x_2,\ldots,x_k)$. If any one of the $x_j$ is equal to 0, then we may define $\vect{y}=(y_1,y_2,\ldots,y_k)$, where $y_j=1$ and $y_i=0$ whenever $i\neq j$. As $k\geq2$, $\vect{y}\neq\vect{0}$, and
-    \[ \vect{x}\cdot\vect{y} = \sum_{i=1}^k x_iy_i = x_jy_j + \sum_{i\neq j} x_iy_i = 0\cdot1 + \sum_{i\neq j} x_i\cdot0 = 0. \]
-    Otherwise all of $x_1,x_2,\ldots,x_k$ are nonzero. Since $k\geq 2$, in particular $x_1$ and $x_2$ are nonzero. Hence if we define $\vect{y}=(y_1,y_2,\ldots,y_k)$ by $y_1=x_2$, $y_2=-x_1$ and $y_i=0$ if $i>2$, then $\vect{y}\neq\vect{0}$. Moreover
-    \[ \vect{x}\cdot\vect{y} = \sum_{i=1}^k x_iy_i = x_1x_2-x_2x_1 + \sum_{i=3}^k x_i\cdot0 = 0. \]
-    So if $k\geq2$, for every $\vect{x}\in\R^k$ there exists $\vect{y}\in\R^k$ such that $\vect{y}\neq\vect{0}$ but $\vect{x}\cdot\vect{y}=0$. However if $k=1$ then we can take $x=1$, then whenever $x\cdot y=0$ we must have $y=0$, therefore the same result is not also true in this case.
+    Suppose that $\vec{x}=(x_1,x_2,\ldots,x_k)$. If any one of the $x_j$ is equal to 0, then we may define $\vec{y}=(y_1,y_2,\ldots,y_k)$, where $y_j=1$ and $y_i=0$ whenever $i\neq j$. As $k\geq2$, $\vec{y}\neq\vec{0}$, and
+    \[ \vec{x}\cdot\vec{y} = \sum_{i=1}^k x_iy_i = x_jy_j + \sum_{i\neq j} x_iy_i = 0\cdot1 + \sum_{i\neq j} x_i\cdot0 = 0. \]
+    Otherwise all of $x_1,x_2,\ldots,x_k$ are nonzero. Since $k\geq 2$, in particular $x_1$ and $x_2$ are nonzero. Hence if we define $\vec{y}=(y_1,y_2,\ldots,y_k)$ by $y_1=x_2$, $y_2=-x_1$ and $y_i=0$ if $i>2$, then $\vec{y}\neq\vec{0}$. Moreover
+    \[ \vec{x}\cdot\vec{y} = \sum_{i=1}^k x_iy_i = x_1x_2-x_2x_1 + \sum_{i=3}^k x_i\cdot0 = 0. \]
+    So if $k\geq2$, for every $\vec{x}\in\R^k$ there exists $\vec{y}\in\R^k$ such that $\vec{y}\neq\vec{0}$ but $\vec{x}\cdot\vec{y}=0$. However if $k=1$ then we can take $x=1$, then whenever $x\cdot y=0$ we must have $y=0$, therefore the same result is not also true in this case.
   \end{solution}
 
-  \question Suppose $\vect{a}\in\R^k$, $\vect{b}\in\R^k$. Find $\vect{c}\in\R^k$ and $r>0$ such that
-  \[ \abs{\vect{x}-\vect{a}} = 2\abs{\vect{x}-\vect{b}} \]
-  if and only if $\abs{\vect{x}-\vect{c}}=r$.
-  (\emph{Solution:} $3\vect{c}=4\vect{b}-\vect{a}$, $3r=2\abs{\vect{b}-\vect{a}}$.)
+  \question Suppose $\vec{a}\in\R^k$, $\vec{b}\in\R^k$. Find $\vec{c}\in\R^k$ and $r>0$ such that
+  \[ \abs{\vec{x}-\vec{a}} = 2\abs{\vec{x}-\vec{b}} \]
+  if and only if $\abs{\vec{x}-\vec{c}}=r$.
+  (\emph{Solution:} $3\vec{c}=4\vec{b}-\vec{a}$, $3r=2\abs{\vec{b}-\vec{a}}$.)
   \begin{solution}
     We have the following equality
     \begin{align*}
-      4\abs{\vect{x}-\vect{b}}^2 - \abs{\vect{x}-\vect{a}}^2 &= 4\abs{\vect{x}}^2 - 8\vect{x}\cdot\vect{b} + 4\abs{\vect{b}}^2 - \abs{\vect{x}}^2 + 2\vect{x}\cdot\vect{a} - \abs{\vect{a}}^2 \\
-                                                             &= 3\abs{\vect{x}}^2 - 2\vect{x}\cdot(4\vect{b} - \vect{a}) + 4\abs{\vect{b}}^2 - \abs{\vect{a}}^2 \\
-                                                             &= 3\abs*{\vect{x}-\frac{1}{3}(4\vect{b}-\vect{a})}^2 - \frac{1}{3}\abs{4\vect{b}-\vect{a}}^2 + 4\abs{\vect{b}}^2 - \abs{\vect{a}}^2 \\
-                                                             &= 3\abs*{\vect{x}-\frac{1}{3}(4\vect{b}-\vect{a})}^2 - \frac{16}{3}\abs{\vect{b}}^2 + \frac{8}{3}\vect{b}\cdot\vect{a} - \frac{1}{3}\abs{\vect{a}}^2 + 4\abs{\vect{b}}^2 - \abs{\vect{a}}^2 \\
-                                                             &= 3\abs*{\vect{x}-\frac{1}{3}(4\vect{b}-\vect{a})}^2 - \frac{4}{3}\abs{\vect{b}}^2 + \frac{8}{3}\vect{b}\cdot\vect{a} - \frac{4}{3}\abs{\vect{a}}^2 \\
-                                                             &= 3\abs*{\vect{x}-\frac{1}{3}(4\vect{b}-\vect{a})}^2 - \frac{4}{3}\abs{\vect{b}-\vect{a}}^2.
+      4\abs{\vec{x}-\vec{b}}^2 - \abs{\vec{x}-\vec{a}}^2 &= 4\abs{\vec{x}}^2 - 8\vec{x}\cdot\vec{b} + 4\abs{\vec{b}}^2 - \abs{\vec{x}}^2 + 2\vec{x}\cdot\vec{a} - \abs{\vec{a}}^2 \\
+                                                             &= 3\abs{\vec{x}}^2 - 2\vec{x}\cdot(4\vec{b} - \vec{a}) + 4\abs{\vec{b}}^2 - \abs{\vec{a}}^2 \\
+                                                             &= 3\abs*{\vec{x}-\frac{1}{3}(4\vec{b}-\vec{a})}^2 - \frac{1}{3}\abs{4\vec{b}-\vec{a}}^2 + 4\abs{\vec{b}}^2 - \abs{\vec{a}}^2 \\
+                                                             &= 3\abs*{\vec{x}-\frac{1}{3}(4\vec{b}-\vec{a})}^2 - \frac{16}{3}\abs{\vec{b}}^2 + \frac{8}{3}\vec{b}\cdot\vec{a} - \frac{1}{3}\abs{\vec{a}}^2 + 4\abs{\vec{b}}^2 - \abs{\vec{a}}^2 \\
+                                                             &= 3\abs*{\vec{x}-\frac{1}{3}(4\vec{b}-\vec{a})}^2 - \frac{4}{3}\abs{\vec{b}}^2 + \frac{8}{3}\vec{b}\cdot\vec{a} - \frac{4}{3}\abs{\vec{a}}^2 \\
+                                                             &= 3\abs*{\vec{x}-\frac{1}{3}(4\vec{b}-\vec{a})}^2 - \frac{4}{3}\abs{\vec{b}-\vec{a}}^2.
     \end{align*}
-    Hence $\abs{\vect{x}-\vect{a}}=2\abs{\vect{x}-\vect{b}}$ if and only if $\abs{\vect{x}-\frac{1}{3}(4\vect{b}-\vect{a})}=\frac{2}{3}\abs{\vect{b}-\vect{a}}$. So if we set
-    \[ \vect{c}=\frac{1}{3}(4\vect{b}-\vect{a}),\quad r=\frac{2}{3}\abs{\vect{b}-\vect{a}}, \]
-    then $\abs{\vect{x}-\vect{a}}=2\abs{\vect{x}-\vect{b}}$ if and only if $\abs{\vect{x}-\vect{c}}=r$.
+    Hence $\abs{\vec{x}-\vec{a}}=2\abs{\vec{x}-\vec{b}}$ if and only if $\abs{\vec{x}-\frac{1}{3}(4\vec{b}-\vec{a})}=\frac{2}{3}\abs{\vec{b}-\vec{a}}$. So if we set
+    \[ \vec{c}=\frac{1}{3}(4\vec{b}-\vec{a}),\quad r=\frac{2}{3}\abs{\vec{b}-\vec{a}}, \]
+    then $\abs{\vec{x}-\vec{a}}=2\abs{\vec{x}-\vec{b}}$ if and only if $\abs{\vec{x}-\vec{c}}=r$.
   \end{solution}
 
   \question With reference to the Appendix, suppose that property (III) were omitted from the definition of a cut. Keep the same definitions of order and addition. Show that the resulting ordered set has the least-upper-bound property, that addition satisfies the axioms (A1) to (A4) (with a slightly different zero-element!) but that (A5) fails.
