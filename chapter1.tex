@@ -341,6 +341,21 @@ Unless the contrary is explicitly stated, all numbers that are mentioned in thes
   \end{solution}
 
   \question With reference to the Appendix, suppose that property (III) were omitted from the definition of a cut. Keep the same definitions of order and addition. Show that the resulting ordered set has the least-upper-bound property, that addition satisfies the axioms (A1) to (A4) (with a slightly different zero-element!) but that (A5) fails.
+  \begin{solution}
+    We will use $\R^\#$ to denote the collection of modified cuts (subsets of $\Q$ satisfying property (I) and (II)). The same proof that $\R$ is an ordered set shows that $\R^\#$ is an ordered set, as property (III) of cuts is never invoked in the former.
+
+    The supremum of a bounded subset of $\R$ is the union of its elements. Only properties (I) and (II) of cuts were required to show that the union satisfied properties (I) and (II), and property (III) was also not required to prove that the union was a supremum. Hence the same construction produces a least-upper-bound of a bounded subset of $\R^\#$, so it has the least-upper-bound property also.
+
+    To prove that the sum of two cuts in $\R$ satisfies properties (I) and (II) only requires properties (I) and (II) of the two cuts, hence (A1) holds in $\R^\#$. Property (III) of cuts is not required to show that (A2) and (A3) hold in $\R$, hence they hold in $\R^\#$.
+
+    Define $0^\#$ to be the set of all nonpositive rationals (note this is different from the additive identity $0^*$ of $\R$ in the appendix). Then we claim that (A4) holds in $\R^\#$ with $0^\#$ as the additive identity. First we must show that $0^\#$ satisfies (I) and (II).
+
+    Clearly $0\in0^\#$ and $1\notin0^\#$, so that $0^\#$ satisfies (I). If $p\in0^\#$, $q\in\Q$ and $q<p$, then $q<0$ so that $q\in0^\#$. Hence $0^\#$ satisfies (II), and so $0^\#\in\R^\#$. Next we seek to prove that $\alpha=\alpha+0^\#$ for all $\alpha\in\R^\#$.
+
+    Let $\alpha\in\R^\#$, then if $r\in\alpha$ and $s\in0^\#$ then $r+s\leq r$, hence $r+s\in\alpha$. So $\alpha+0^\#\subset\alpha$. Conversely $r=r+0\in\alpha+0^\#$, and so $\alpha\subset\alpha+0^\#$. Hence $\alpha=\alpha+0^\#$, and so (A4) holds in $\R^\#$.
+
+    Let $0^*$ be the set of all negative rationals, then $0^*\in\R\subset\R^\#$. We show that $0^*$ has no additive inverse in $\R^\#$. Suppose $0^*+\alpha=0^\#$ for some $\alpha\in\R^\#$. Then $r+s=0$ for some $r\in0^*$, $s\in\alpha$. However then $-r/2=r/2+s\in0^*+\alpha$, but since $-r/2>0$ we have $-r/2\notin0^\#$, which is a contradiction. Therefore (A5) fails to hold in $\R^\#$.
+  \end{solution}
 \end{questions}
 
 %%% Local Variables:
