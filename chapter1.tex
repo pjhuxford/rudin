@@ -297,7 +297,25 @@ Unless the contrary is explicitly stated, all numbers that are mentioned in thes
     \[ r = \abs{\lambda(\vec{z}-\vec{y})} = \abs{\vec{z}-\vec{y}} \implies \abs{\lambda}=1. \]
     If $\lambda=-1$, then $\vec{x}=\vec{y}$, contradicting $d>0$. Hence $\lambda=1$, and so $\vec{z}=(\vec{x}+\vec{y})/2$. So if $2r=d$, there is precisely one such $\vec{z}$, which answers (b).
 
-    The statements in (b) and (c) need not be modified if $k$ is 2 or 1.
+    Consider the following system of equations in $\vec{w}$
+    \begin{align*}
+      \vec{w}\cdot(\vec{y}-\vec{x}) &= 0 \\
+      \abs{\vec{w}}^2 &= r^2 - \frac{d^2}{4}.
+    \end{align*}
+    Suppose without loss of generality that the first coordinate of $\vec{y}-\vec{x}$ is nonero. If $\vec{w}=(w_1,w_2,\ldots,w_k)$, then since $k\geq3$ if we let $w_2=\lambda$, $w_3=1$, and $w_i=0$ if $i>3$, then there is a unique $w_1\in\R$ such that $\vec{w}$ satisfies the first equation, namely
+    \[ w_1 = \frac{\lambda(x_2-y_2) + (x_3-y_3)}{y_1-x_1}. \]
+    For each $\lambda\in\R$ this produces a nonzero solution $\vec{w}$ to the first equation. For each of these solutions, since $r^2-\frac{d^2}{4}>0$ there is a unique $t>0$ for which $t\vec{w}$ is a solution to the second equation. For a particular value of $\lambda$, the second coordinate of $t\vec{w}$ divided by its third coordinate is equal to $\lambda$, for any value of $t$. Hence for distinct values of $\lambda$ we obtain distinct solutions $t\vec{w}$ to both equations.
+
+    So there are infinitely many solutions $\vec{w}$ to the two equations when $k\geq3$. For each such $\vec{w}$, the vector $\vec{z}=\frac{1}{2}\vec{x}+\frac{1}{2}\vec{y}+\vec{w}$ satisfies $\abs{\vec{z}-\vec{x}}=\abs{\vec{z}-\vec{y}}=r$, as
+    \begin{align*}
+      \abs{\vec{z}-\vec{x}}^2 &= \abs*{\frac{1}{2}(\vec{y}-\vec{x}) + \vec{w}}^2 \\
+                              &= \frac{1}{4}\abs{\vec{y}-\vec{x}}^2 + \vec{w}\cdot(\vec{y}-\vec{x}) + \abs{\vec{w}}^2 \\
+                              &= \frac{d^2}{4} + r^2 - \frac{d^2}{4} \\
+                              &= r^2,
+    \end{align*}
+    and similarly $\abs{\vec{z}-\vec{y}}^2=r^2$. Hence there are infinitely many $\vec{z}$ which satisfy $\abs{\vec{z}-\vec{x}}=\abs{\vec{z}-\vec{y}}=r$ if $2r>d$, which answers (a).
+
+    The statements in (b) and (c) need not be modified if $k$ is 2 or 1. For part (a), if $k=1$ then there are no solutions, since for real numbers $x,y,z$, if $\abs{z-x}=\abs{z-y}=r$, then $\abs{x-y}=2r$ or 0. For part (a), if $k=2$ then there are precisely two solutions for $\vec{z}$, corresponding to the two points where the circles $\abs{\vec{z}-\vec{x}}=r$ and $\abs{\vec{z}-\vec{y}}=r$ meet.
   \end{solution}
 
   \question Prove that
