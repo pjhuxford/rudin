@@ -1,1 +1,132 @@
 \section{Basic Topology}
+
+\begin{questions}
+  \question Prove that the empty set is a subset of every set.
+
+  \question A complex number $z$ is said to be \emph{algebraic} if there are integers $a_0,\ldots,a_n$, not all zero, such that
+  \[ a_0z^n + a_1z^{n-1} + \cdots + a_{n-1}z + a_n = 0. \]
+  Prove that the set of all algebraic numbers is countable. \emph{Hint:} For every positive integer $N$ there are only finitely many equations with
+  \[ n + \abs{a_0} + \abs{a_1} + \cdots \abs{a_n} = N. \]
+
+  \question Prove that there exist real numbers which are not algebraic.
+
+  \question Is the set of all irrational real numbers countable?
+
+  \question Construct a bounded set of real numbers with exactly three limit points.
+
+  \question Let $E'$ be the set of all limit points of a set $E$. Prove that $E'$ is closed. Prove that $E$ and $\cl{E}$ have the same limit points. (Recall that $\cl{E}=E\cup E'$.) Do $E$ and $E'$ always have the same limit points?
+
+  \question Let $A_1,A_2,A_3,\ldots$ be subsets of a metric space.
+  \begin{parts}
+    \part If $B_n=\bigcup_{i=1}^n A_i$, prove that $\cl{B_n}=\bigcup_{i=1}^n\cl{A_i}$, for $n=1,2,3,$ \ldots.
+
+    \part If $B=\bigcup_{i=1}^\infty A_i$, prove that $\cl{B}\supset\bigcup_{i=1}^\infty\cl{A_i}$. Show, by an example, that this inclusion can be proper.
+  \end{parts}
+
+  \question Is every point of every open set $E\subset\R^2$ a limit point of $E$? Answer the same question for closed sets in $\R^2$.
+
+  \question Let $\interior{E}$ denote the set of all interior points of a set $E$. [See Definition 2.18(e); $\interior{E}$ is called the \emph{interior} of $E$.]
+  \begin{parts}
+    \part Prove that $\interior{E}$ is always open.
+
+    \part Prove that $E$ is open if and only if $\interior{E}=E$.
+
+    \part If $G\subset E$ and $G$ is open, prove that $G\subset\interior{E}$.
+
+    \part Prove that the complement of $\interior{E}$ is the closure of the complement of $E$.
+
+    \part Do $E$ and $\cl{E}$ always have the same interiors?
+
+    \part Do $E$ and $\interior{E}$ always have the same closures?
+  \end{parts}
+
+  \question Let $X$ be an infinite set. For $p\in X$ and $q\in X$, define
+  \[ d(p,q) =
+    \begin{cases}
+      1 & \text{(if $p\neq q$)} \\
+      0 & \text{(if $p=q$).}
+    \end{cases}
+  \]
+  Prove that this is a metric. Which subsets of the resulting metric space are open? Which are closed? Which are compact?
+
+  \question For $x\in\R^1$ and $y\in\R^1$, define
+  \begin{align*}
+    d_1(x,y) &= (x-y)^2, \\
+    d_2(x,y) &= \sqrt{\abs{x-y}}, \\
+    d_3(x,y) &= \abs{x^2-y^2}, \\
+    d_4(x,y) &= \abs{x-2y}, \\
+    d_5(x,y) &= \frac{\abs{x-y}}{1+\abs{x-y}}.
+  \end{align*}
+  Determine, for each of these, whether it is a metric or not.
+
+  \question Let $K\subset\R^1$ consist of 0 and the numbers $1/n$, for $n=1,2,3,$ \ldots. Prove that $K$ is compact directly from the definition (without using the Heine-Borel theorem).
+
+  \question Construct a compact set of real numbers whose limit points for a countable set.
+
+  \question Give an example of an open cover of the segment $(0,1)$ which has no finite subcover.
+
+  \question Show that Theorem 2.36 and its Corollary become false (in $R^1$, for example) if the word ``compact'' is replaced by ``closed'' or by ``bounded.''
+
+  \question Regard $\Q$, the set of all rational numbers, as a metric space, with $d(p,q)=\abs{p-q}$. Let $E$ be the set of all $p\in\Q$ such that $2<p^2<3$. Show that $E$ is closed and bounded in $\Q$, but that $E$ is not compact. Is $E$ open in $\Q$?
+
+  \question Let $E$ be the set of all $x\in[0,1]$ whose decimal expansion contains only the digits 4 and 7. Is $E$ countable? Is $E$ dense in $[0,1]$? Is $E$ compact? Is $E$ perfect?
+
+  \question Is there a nonempty perfect set in $\R^1$ which contains no rational number?
+
+  \question
+  \begin{parts}
+    \part If $A$ and $B$ are disjoint closed sets in some metric space $X$, prove that they are separated.
+
+    \part Prove the same for disjoint open sets.
+
+    \part Fix $p\in X$, $\delta>0$, define $A$ to be the set of all $q\in X$ for which $d(p,q)<\delta$, define $B$ similarly, with $>$ in place of $<$. Prove that $A$ and $B$ are separated.
+
+    \part Prove that every connected metric space with at least two points is uncountable. \emph{Hint:} Use (c).
+  \end{parts}
+
+  \question Are closures and interiors of connected sets always connected? (Look at subset of $\R^2$.)
+
+  \question Let $A$ and $B$ be separated subsets of some $\R^k$, suppose $\vec{a}\in A$, $\vec{b}\in B$, and define
+  \[ \vec{p}(t) = (1-t)\vec{a} + t\vec{b} \]
+  for $t\in\R^1$. Put $A_0=\vec{p}^{-1}(A)$, $B_0=\vec{p}^{-1}(B)$. [Thus $t\in A_0$ if and only if $\vec{p}(t)\in A$.]
+  \begin{parts}
+    \part Prove that $A_0$ and $B_0$ are separated subsets of $\R^1$.
+
+    \part Prove that there exists $t_0\in(0,1)$ such that $\vec{p}(t_0)\notin A\cup B$.
+
+    \part Prove that every convex subset of $\R^k$ is connected.
+  \end{parts}
+
+  \question A metric space is called separable if it contains a countable dense subset. Show that $\R^k$ is separable. \emph{Hint:} Consider the set of points which have only rational coordinates.
+
+  \question A collection $\{V_\alpha\}$ of open subsets of $X$ is said to be a \emph{base} for $X$ if the following is true: For every $x\in X$ and every open set $G\subset X$ such that $x\in G$, we have $x\in V_\alpha\subset G$ for some $\alpha$. In other words, every open set in $X$ is the union of a subcollection of $\{V_\alpha\}$.
+
+  Prove that every separable metric space has a \emph{countable} base. \emph{Hint:} Take all neighbourhoods with rational radius and center in some countable dense subset of $X$.
+
+  \question Let $X$ be a metric space in which every infinite subset has a limit point. Prove that $X$ is separable. \emph{Hint:} Fix $\delta>0$, and pick $x_1\in X$. Having chosen $x_1,\ldots,x_j\in X$, choose $x_{j+1}\in X$, if possible, so that $d(x_1,x_{j+1})\geq\delta$ for $i=1,\ldots,j$. Show that this process must stop after a finite number of steps, and that $X$ can therefore be covered by finitely many neighbourhoods of radius $\delta$. Take $\delta=1/n$ ($n=1,2,3,\ldots$), and consider the centers of the corresponding neighbourhoods.
+
+  \question Prove that every compact metric space $K$ has a countable base, and that $K$ is therefore separable. \emph{Hint:} For every positive integer $n$ there are finitely many neighbourhoods of radius $1/n$ whose union covers $K$.
+
+  \question Let $X$ be a metric space in which every infinite subset has a limit point. Prove that $X$ is compact. \emph{Hint:} By Exercises 23 and 24, $X$ has a countable base. It follows that every open cover of $X$ has a \emph{countable} subcover $\{G_n\}$, $n=1,2,3,$ \ldots. If no finite subcollection of $\{G_n\}$ covers $X$, then the complement $F_n$ of $G_1\cup\cdots\cup G_n$ is nonempty for each $n$, but $\bigcap F_n$ is empty. If $E$ is a set which contains a point from each $F_n$, consider a limit point of $E$, and obtain a contradiction.
+
+  \question Define a point $p$ in a metric space $X$ to be a \emph{condensation point} of a set $E\subset X$ if every neighbourhood of $p$ contains uncountably many points of $E$.
+
+  Suppose $E\subset\R^k$, $E$ is uncountable, and let $P$ be the set of all condensation points of $E$. Prove that $P$ is perfect and that at most countably many points of $E$ are not in $P$. In other words, show that $P^c\cap E$ is at most countable. \emph{Hint:} Let $\{V_n\}$ be a countable base of $\R^k$, let $W$ be the union of those $V_n$ for which $E\cap V_n$ is at most countable, and show that $P=W^c$.
+
+  \question Prove that every closed set in a separable metric space is the union of a (possibly empty) perfect set and a set which is at most countable (\emph{Corollary:} Every countable closed set in $\R^k$ has isolated points.) \emph{Hint:} Use Exercise 27.
+
+  \question Prove that every open set in $\R^1$ is the union of an at most countable collection of disjoint segments. \emph{Hint:} Use Exercise 22.
+
+  \question Imitate the proof of Theorem 2.43 to obtain the following result:
+
+  If $\R^k=\bigcup_1^\infty F_n$, where each $F_n$ is a closed subset of $\R^k$, then at least one $F_n$ has a nonempty interior.
+
+  \emph{Equivalent statement:} If $G_n$ is a dense open subset of $\R^k$, for $n=1,2,3,$ \ldots, then $\bigcap_1^\infty G_n$ is not empty (in fact, it is dense in $\R^k$).
+
+  (This is a special case of Baire's theorem; see Exercise 22, Chap. 3, for the general case.)
+\end{questions}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "rudin"
+%%% End:
