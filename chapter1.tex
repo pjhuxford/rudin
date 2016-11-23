@@ -277,45 +277,64 @@ Unless the contrary is explicitly stated, all numbers that are mentioned in thes
   \begin{parts}
     \part If $2r>d$, there are infinitely many $\vec{z}\in\R^k$ such that
     \[ \abs{\vec{z} - \vec{x}} = \abs{\vec{z} - \vec{y}} = r. \]
+    \begin{solution}
+      For any $\vec{z}\in\R^k$, define $\vec{w}=\vec{z}-\frac{1}{2}(\vec{x}+\vec{y})$. Then $\vec{z}$ satisfies $\abs{\vec{z}-\vec{x}}=\abs{\vec{z}-\vec{y}}=r$ if and only if $\vec{w}$ satisfies the following
+      \begin{equation}
+      \vec{w}\cdot(\vec{x}-\vec{y}) = 0, \qquad \abs{\vec{w}}^2 = r^2 - \frac{d^2}{4}.\label{eq:ch1ex16a}
+    \end{equation}
+
+      For, we have the equality
+      \[ \abs{\vec{z}-\vec{x}}^2 = \abs*{\vec{w} + \frac{1}{2}(\vec{x}-\vec{y})}^2 = \abs{\vec{w}}^2 + \vec{w}\cdot(\vec{x}-\vec{y}) + \frac{1}{4}\abs{\vec{x}-\vec{y}}^2. \]
+      Similarly $\abs{\vec{z}-\vec{y}}^2 = \abs{\vec{w}}^2 - \vec{w}\cdot(\vec{x}-\vec{y}) + \frac{1}{4}\abs{\vec{x}-\vec{y}}^2$. Hence if $\abs{\vec{z}-\vec{x}}=\abs{\vec{z}-\vec{y}}=r$, then $\vec{w}\cdot(\vec{x}-\vec{y})=0$, and $\abs{\vec{w}}^2=\abs{\vec{z}-\vec{x}}^2-\frac{1}{4}\abs{\vec{x}-\vec{y}}^2=r^2-\frac{d^2}{4}$. Conversely if $\vec{w}$ satisfies (\ref{eq:ch1ex16a}) then
+      \[ \abs{\vec{z}-\vec{x}}^2 = \abs{\vec{z}-\vec{y}}^2 = \abs{\vec{w}}^2 + \frac{1}{4}\abs{\vec{x}-\vec{y}}^2 = r^2 - \frac{d^2}{4} + \frac{d^2}{4} = r^2, \]
+      hence $\abs{\vec{z}-\vec{x}}=\abs{\vec{z}-\vec{x}}=r$, so the equivalence follows. Hence there is a one-to-one and onto correspondence between $\vec{z}\in\R^k$ satisfying $\abs{\vec{z}-\vec{x}}=\abs{\vec{z}-\vec{y}}=r$, and $\vec{w}\in\R^k$ satisfying (\ref{eq:ch1ex16a}).
+
+      Let $\vec{x}=(x_1,x_2,\ldots,x_k)$, $\vec{y}=(y_1,y_2,\ldots,y_k)$ and $\vec{w}=(w_1,w_2,\ldots,w_k)$. Since $\vec{x}\neq\vec{y}$ we may assume without loss of generality that $x_1-y_1\neq0$. As $k\geq3$ if we let $w_2=\lambda$, $w_3=1$, and $w_i=0$ if $i>3$, then there is a unique $w_1\in\R$ such that $\vec{w}$ satisfies the first equation of (\ref{eq:ch1ex16a}), namely
+      \[ w_1 = \frac{\lambda(x_2-y_2) + (x_3-y_3)}{y_1-x_1}. \]
+      For each $\lambda\in\R$ this produces a nonzero solution $\vec{w}$ to the first equation. For each of these $\vec{w}$, the vector $t\vec{w}$ satisfies both equations in (\ref{eq:ch1ex16a}), where $t=(r^2-d^2/4)/\abs{\vec{w}}$, since $r^2-d^2/4>0$. So for each $\lambda\in\R$ we have a vector $t\vec{w}$ satisfying (\ref{eq:ch1ex16a}). Moreover these solutions are all distinct, since for a given $\lambda$ the induced solution has ratio $\lambda$ between its second and third coordinates.
+
+      Therefore there are infinitely many $\vec{w}$ which satisfy (\ref{eq:ch1ex16a}) when $k\geq3$. Hence there are infinitely many $\vec{z}$ which satisfy $\abs{\vec{z}-\vec{x}}=\abs{\vec{z}-\vec{y}}=r$ if $2r>d$.
+    \end{solution}
 
     \part If $2r=d$, there is exactly one such $\vec{z}$.
+    \begin{solution}
+      If $2r=d$, then $r^2-\frac{d^2}{4}=0$, so there is precisely one $\vec{w}$ satisfying (\ref{eq:ch1ex16a}), namely $\vec{w}=0$. Hence there is one such $\vec{z}$, namely $\vec{z}=\frac{1}{2}(\vec{x}+\vec{y})$.
+
+      \textbf{Alternate Solution:} Suppose that $\vec{z}$ satisfies $\abs{\vec{z}-\vec{x}}=\abs{\vec{z}-\vec{y}}=r$. Then the Schwarz inequality gives
+      \begin{align*}
+        d^2 = \abs{\vec{x}-\vec{y}}^2 &= \abs{(\vec{x}-\vec{z}) + (\vec{z}-\vec{y})}^2 \\
+                                      &= \abs{\vec{x}-\vec{z}}^2 + 2(\vec{x}-\vec{z})\cdot(\vec{z}-\vec{y}) + \abs{\vec{z}-\vec{y}}^2 \\
+                                      &\leq \abs{\vec{x}-\vec{z}}^2 + 2\abs{\vec{x}-\vec{z}}\abs{\vec{z}-\vec{y}} + \abs{\vec{z}-\vec{y}}^2 \\
+                                      &= (2r)^2.
+      \end{align*}
+      Equality must hold in the above application of the Schwarz inequality. By Exercise \textbf{15}, since $r>0$ we conclude there is a $\lambda\in\R$ with $\vec{x}-\vec{z}=\lambda(\vec{z}-\vec{y})$. Then
+    \[ r = \abs{\lambda(\vec{z}-\vec{y})} = \abs{\vec{z}-\vec{y}} \implies \abs{\lambda}=1. \]
+    If $\lambda=-1$, then $\vec{x}=\vec{y}$, contradicting $d>0$. Hence $\lambda=1$, and so $\vec{z}=(\vec{x}+\vec{y})/2$. So if $2r=d$, there is precisely one such $\vec{z}$, which answers (b).
+    \end{solution}
 
     \part If $2r<d$, there is no such $\vec{z}$.
-  \end{parts}
-  How must these statements be modified if $k$ is 2 or 1?
-  \begin{solution}
-    Suppose that $\vec{z}$ satisfies $\abs{\vec{z}-\vec{x}}=\abs{\vec{z}-\vec{y}}=r$. Then the Schwarz inequality gives
+    \begin{solution}
+      If $2r<d$, then $r^2-\frac{d^2}{4}<0$, so there are no $\vec{w}$ satisfying (\ref{eq:ch1ex16a}). Hence there are no such $\vec{z}$.
+
+      \textbf{Alternate Solution:} Suppose that $\vec{z}$ satisfies $\abs{\vec{z}-\vec{x}}=\abs{\vec{z}-\vec{y}}=r$. Then the Schwarz inequality gives
     \begin{align*}
       d^2 = \abs{\vec{x}-\vec{y}}^2 &= \abs{(\vec{x}-\vec{z}) + (\vec{z}-\vec{y})}^2 \\
                                       &= \abs{\vec{x}-\vec{z}}^2 + 2(\vec{x}-\vec{z})\cdot(\vec{z}-\vec{y}) + \abs{\vec{z}-\vec{y}}^2 \\
                                       &\leq \abs{\vec{x}-\vec{z}}^2 + 2\abs{\vec{x}-\vec{z}}\abs{\vec{z}-\vec{y}} + \abs{\vec{z}-\vec{y}}^2 \\
                                       &= (2r)^2.
     \end{align*}
-    Hence if there are any $\vec{z}$ satisfying the equation, then $d\leq2r$, which answers (c).
+    Hence if there are any $\vec{z}$ satisfying the equation, then $d\leq2r$, so there are no solutions in this case.
+    \end{solution}
+  \end{parts}
+  How must these statements be modified if $k$ is 2 or 1?
+  \begin{solution}
+    If $k=2$ and $2r>d$ then we claim there are precisely two $\vec{z}\in\R^2$ satisfying $\abs{\vec{z}-\vec{x}}=\abs{\vec{z}-\vec{y}}=r$. Write $\vec{x}=(x_1,x_2)$, $\vec{y}=(y_1,y_2)$, $\vec{w}=(w_1,w_2)$. Then $\vec{w}\cdot(\vec{x}-\vec{y})=0$ precisely when
+    \[ w_1(x_1-y_1)+w_2(x_2-y_2)=0. \]
+    Hence any $\vec{w}$ satisfying the first equation of (\ref{eq:ch1ex16a}) must be a multiple of the vector $\vec{w}_0=(x_2-y_2,y_1-x_1)\neq\vec{0}$. Now $\abs{\lambda\vec{w}_0}=r^2-d^2/4$ if and only if $\lambda=\pm(r^2-d^2/4)/\abs{\vec{w}_0}$, and since $r^2-d^2/4>0$, this shows there are precisely two vectors satsifying (\ref{eq:ch1ex16a}), hence precisely two such $\vec{z}$.
 
-    If $2r=d$ then equality must hold in the above application of the Schwarz inequality. By \textbf{15}., since $r>0$ we conclude there is a $\lambda\in\R$ with $\vec{x}-\vec{z}=\lambda(\vec{z}-\vec{y})$. Then
-    \[ r = \abs{\lambda(\vec{z}-\vec{y})} = \abs{\vec{z}-\vec{y}} \implies \abs{\lambda}=1. \]
-    If $\lambda=-1$, then $\vec{x}=\vec{y}$, contradicting $d>0$. Hence $\lambda=1$, and so $\vec{z}=(\vec{x}+\vec{y})/2$. So if $2r=d$, there is precisely one such $\vec{z}$, which answers (b).
+    If $k=1$ and $2r>d$ then there are no $z\in\R^1$ satisfying $\abs{z-x}=\abs{z-y}=r$, since $\abs{z-x}=\abs{z-y}=r$ implies that $\abs{x-y}=0$ or $\abs{x-y}=2r$. Neither of these are equal to $d$ in this case.
 
-    Consider the following system of equations in $\vec{w}$
-    \begin{align*}
-      \vec{w}\cdot(\vec{y}-\vec{x}) &= 0 \\
-      \abs{\vec{w}}^2 &= r^2 - \frac{d^2}{4}.
-    \end{align*}
-    Suppose without loss of generality that the first coordinate of $\vec{y}-\vec{x}$ is nonero. If $\vec{w}=(w_1,w_2,\ldots,w_k)$, then since $k\geq3$ if we let $w_2=\lambda$, $w_3=1$, and $w_i=0$ if $i>3$, then there is a unique $w_1\in\R$ such that $\vec{w}$ satisfies the first equation, namely
-    \[ w_1 = \frac{\lambda(x_2-y_2) + (x_3-y_3)}{y_1-x_1}. \]
-    For each $\lambda\in\R$ this produces a nonzero solution $\vec{w}$ to the first equation. For each of these solutions, since $r^2-\frac{d^2}{4}>0$ there is a unique $t>0$ for which $t\vec{w}$ is a solution to the second equation. For a particular value of $\lambda$, the second coordinate of $t\vec{w}$ divided by its third coordinate is equal to $\lambda$, for any value of $t$. Hence for distinct values of $\lambda$ we obtain distinct solutions $t\vec{w}$ to both equations.
-
-    So there are infinitely many solutions $\vec{w}$ to the two equations when $k\geq3$. For each such $\vec{w}$, the vector $\vec{z}=\frac{1}{2}\vec{x}+\frac{1}{2}\vec{y}+\vec{w}$ satisfies $\abs{\vec{z}-\vec{x}}=\abs{\vec{z}-\vec{y}}=r$, as
-    \begin{align*}
-      \abs{\vec{z}-\vec{x}}^2 &= \abs*{\frac{1}{2}(\vec{y}-\vec{x}) + \vec{w}}^2 \\
-                              &= \frac{1}{4}\abs{\vec{y}-\vec{x}}^2 + \vec{w}\cdot(\vec{y}-\vec{x}) + \abs{\vec{w}}^2 \\
-                              &= \frac{d^2}{4} + r^2 - \frac{d^2}{4} \\
-                              &= r^2,
-    \end{align*}
-    and similarly $\abs{\vec{z}-\vec{y}}^2=r^2$. Hence there are infinitely many $\vec{z}$ which satisfy $\abs{\vec{z}-\vec{x}}=\abs{\vec{z}-\vec{y}}=r$ if $2r>d$, which answers (a).
-
-    The statements in (b) and (c) need not be modified if $k$ is 2 or 1. For part (a), if $k=1$ then there are no solutions, since for real numbers $x,y,z$, if $\abs{z-x}=\abs{z-y}=r$, then $\abs{x-y}=2r$ or 0. For part (a), if $k=2$ then there are precisely two solutions for $\vec{z}$, corresponding to the two points where the circles $\abs{\vec{z}-\vec{x}}=r$ and $\abs{\vec{z}-\vec{y}}=r$ meet.
+    The statements in (b) and (c) need not be modified if $k$ is 2 or 1.
   \end{solution}
 
   \question Prove that
