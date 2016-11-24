@@ -2,15 +2,31 @@
 
 \begin{questions}
   \question Prove that the empty set is a subset of every set.
+  \begin{solution}
+    Let $A$ be a set. The implication $x\in\emptyset\implies x\in A$ holds because $x\in\emptyset$ is never true, hence $\emptyset\subset A$.
+  \end{solution}
 
   \question A complex number $z$ is said to be \emph{algebraic} if there are integers $a_0,\ldots,a_n$, not all zero, such that
   \[ a_0z^n + a_1z^{n-1} + \cdots + a_{n-1}z + a_n = 0. \]
   Prove that the set of all algebraic numbers is countable. \emph{Hint:} For every positive integer $N$ there are only finitely many equations with
   \[ n + \abs{a_0} + \abs{a_1} + \cdots \abs{a_n} = N. \]
+  \begin{solution}
+    Let $A_N$ denote the set of all complex numbers $z$ such that there exist integers $a_0,\ldots,a_n$ not all zero, such that $n+\abs{a_0}+\abs{a_1}+\cdots+\abs{a_n}=N$ and
+    \[ a_0z^n + a_1z^{n-1} + \cdots + a_{n-1}z + a_n = 0. \]
+    Then for each $N\in\N$, $A_N$ is finite, as from the hint there are only finitely many equations with $n+\abs{a_0}+\abs{a_1}+\cdots+\abs{a_n}=N$, and each of these equations has finitely many solutions.
+
+    It is clear that $\bigcup_{N\in\N} A_N$ is the set of all algebraic numbers. Being a countable union of at most countable sets, it is at most countable. Every natural number $n$ is an algebraic number, being a solution to $z-n=0$, so the set of all algebraic numbers is infinite and hence countable.
+  \end{solution}
 
   \question Prove that there exist real numbers which are not algebraic.
+  \begin{solution}
+    The set of real numbers is uncountable. The set of complex algebraic numbers is countable by the previous exercise, hence the set of real algebraic numbers is at most countable. Hence the set of real numbers cannot equal the set of real algebraic numbers, so there exist real numbers which are not algebraic.
+  \end{solution}
 
   \question Is the set of all irrational real numbers countable?
+  \begin{solution}
+    If the set $\R\setminus\Q$ were countable, then as $\Q$ is countable, $\R=\Q\cup(\R\setminus\Q)$ would be an at most countable union of countable sets, hence $\R$ would be countable. We know that $\R$ is uncountable, so $\R\setminus\Q$ must also be uncountable.
+  \end{solution}
 
   \question Construct a bounded set of real numbers with exactly three limit points.
 
