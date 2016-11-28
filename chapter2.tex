@@ -31,29 +31,73 @@
   \question Construct a bounded set of real numbers with exactly three limit points.
 
   \question Let $E'$ be the set of all limit points of a set $E$. Prove that $E'$ is closed. Prove that $E$ and $\cl{E}$ have the same limit points. (Recall that $\cl{E}=E\cup E'$.) Do $E$ and $E'$ always have the same limit points?
+  \begin{solution}
+    Let $x$ be a limit point of $\cl{E}$, and let $r>0$. Then $N_r(x)$ contains a point $y\neq x$ such that $y\in\cl{E}$. If $y\notin E$ then $y$ is a limit point of $E$. Let $\varepsilon=\min\{r-d(y,x),d(y,x)\}>0$, then $N_\varepsilon(y)$ contains a point $z\in E$. Now
+    \[ d(z,x) \leq d(z,y) + d(y,x) < \varepsilon + d(y,x) \leq r,  \]
+    hence $z\in N_r(x)$. Moreover $d(z,x)\geq d(y,x)-d(y,z) > d(y,x)-\varepsilon \geq 0$, so $z\neq x$. So there exists a point of $E$ in $N_r(x)$ distinct from $x$, for all $r>0$. So all limit points of $\cl{E}$ are limit points of $E$. Clearly a limit point of $E$ is a limit point of $\cl{E}=E\cup E'$, so $E$ and $\cl{E}$ have the same limit points.
+
+    Let $x$ be a limit point of $E'$, then $x$ is a limit point of $\cl{E}$, and hence a limit point of $E$. Therefore $x\in E'$, which shows that $E'$ is closed.
+
+    Since $E'$ is closed, all limit points of $E'$ are limit points of $E$. The converse however is not true. Let $E$ be the set of all $1/n$, where $n\in\N$. Then $E'=\{0\}$, and so there are no limit points of $E'$. So $E$ and $E'$ do not always have the same limit points.
+  \end{solution}
 
   \question Let $A_1,A_2,A_3,\ldots$ be subsets of a metric space.
   \begin{parts}
     \part If $B_n=\bigcup_{i=1}^n A_i$, prove that $\cl{B_n}=\bigcup_{i=1}^n\cl{A_i}$, for $n=1,2,3,$ \ldots.
+    \begin{solution}
+      Let $p\in\cl{B_n}$. If $p\in B_n$ then $p\in A_i$ for some $1\leq i\leq n$, hence $p\in \cl{A_i}$, and so $p\in\bigcup_{i=1}^n \cl{A_i}$. If $p\notin B_n$ then $p$ is a limit point of $B_n$.
+
+      Suppose that $p$ is not a limit point of any of $A_1,A_2,\ldots,A_n$. Then there exist $\varepsilon_1,\varepsilon_2,\ldots,\varepsilon_n>0$ such that $N_{\varepsilon_i}(p)$ contains no points of $A_i$ for all $1\leq i\leq n$. Let $\varepsilon=\min\{\varepsilon_1,\varepsilon_2,\ldots,\varepsilon_n\}>0$, then $N_\varepsilon(p)$ contains no points of $\bigcup_{i=1}^n A_i=B_n$, which contradicts $p$ being a limit point of $B_n$.
+
+      Therefore $p$ is a limit point of at least one $A_i$ with $1\leq i\leq n$, hence $p\in A_i'\subset\cl{A_i}\subset\bigcup_{i=1}^n\cl{A_i}$. It follows that $\cl{B_n}\subset\bigcup_{i=1}^n\cl{A_i}$. Conversely, let $p\in\cl{A_i}$ for any $1\leq i\leq n$. If $p\in A_i$, then $p\in B_n\subset\cl{B_n}$. Otherwise $p$ is a limit point of $A_i$, so it is a limit point of $B_n$, hence $p\in\cl{B_n}$. It follows that $\bigcup_{i=1}^n \cl{A_i}\subset\cl{B_n}$, which proves the claim.
+    \end{solution}
 
     \part If $B=\bigcup_{i=1}^\infty A_i$, prove that $\cl{B}\supset\bigcup_{i=1}^\infty\cl{A_i}$. Show, by an example, that this inclusion can be proper.
+    \begin{solution}
+      Let $p\in\cl{A_i}$ for any $i\in\N$. If $p\in A_i$ then $p\in B\subset\cl{B}$. Otherwise $p$ is a limit point of $A_i$, so it is a limit point of $B$, hence $p\in\cl{B}$. It follows that $\cl{B}\supset\bigcup_{i=1}^\infty\cl{A_i}$. Moreover this inclusion can be proper. Let $A_i=\{1/i\}$, for each $i\in\N$, and define $B=\bigcup_{i=1}^\infty A_i$. Then $\cl{A_i}=\{1/i\}$, so $B=\bigcup_{i=1}^\infty\cl{A_i}$. However $\cl{B}=B\cup\{0\}$, so $\bigcup_{i=1}^\infty\cl{A_i}$ is a proper subset of $\cl{B}$ in this case.
+    \end{solution}
   \end{parts}
 
   \question Is every point of every open set $E\subset\R^2$ a limit point of $E$? Answer the same question for closed sets in $\R^2$.
+  \begin{solution}
+    Let $E\subset\R^2$ be open, and let $p\in E$. Then there is a neighbourhood $N_r(p)\subset E$. Let $\varepsilon>0$, and define $\delta=\min\{\varepsilon,r\}$. Then let $q=p+(\delta/2,0)$. Then $q\in N_\delta(p)$, so that $q\in N_\varepsilon(p)$ and $q\in N_r(p)\subset E$. Also, $q\neq p$. So all points $p$ of an open subset $E$ of $\R^2$ are limit points of $E$.
+
+    The same does not hold for closed subsets of $\R^2$. For example the set $\{\vec{0}\}$ has no limit points, so is closed, and $\vec{0}$ is not a limit point of this set.
+  \end{solution}
 
   \question Let $\interior{E}$ denote the set of all interior points of a set $E$. [See Definition 2.18(e); $\interior{E}$ is called the \emph{interior} of $E$.]
   \begin{parts}
     \part Prove that $\interior{E}$ is always open.
+    \begin{solution}
+      Let $p\in\interior{E}$, then there is a neighbourhood with $N_r(p)\subset E$. We claim that $N_r(p)\subset\interior{E}$. Let $q\in N_r(p)$, then since neighbourhoods are open there exists an $\varepsilon>0$ such that $N_\varepsilon(q)\subset N_r(p)\subset E$. Hence $q\in\interior{E}$, so that $N_r(p)\subset\interior{E}$. It follows that $\interior{E}$ is open.
+    \end{solution}
 
     \part Prove that $E$ is open if and only if $\interior{E}=E$.
+    \begin{solution}
+      If $E$ is open then all points of $E$ are interior, hence $\interior{E}=E$. Conversely, if $\interior{E}=E$, then since $\interior{E}$ is always open so too is $E$.
+    \end{solution}
 
     \part If $G\subset E$ and $G$ is open, prove that $G\subset\interior{E}$.
+    \begin{solution}
+      Let $g\in G$, then as $G$ is open it contains a neighbourhood $N_r(g)$. Hence $N_r(g)\subset G\subset E$, so that $g$ is interior to $E$. Hence $G\subset\interior{E}$.
+    \end{solution}
 
     \part Prove that the complement of $\interior{E}$ is the closure of the complement of $E$.
+    \begin{solution}
+      Let $x\in\comp{(\interior{E})}$, then as $x$ is not interior to $E$, no neighbourhood of $x$ is completely contained in $E$. Hence every neighbourhood $N_r(x)$ contains a point in $\comp{E}$. If $x\notin\comp{E}$, then the points of $N_r(x)$ which are in $\comp{E}$ must be distinct from $x$, hence $x$ is a limit point of $\comp{E}$. Therefore either $x\in\comp{E}$ or $x\in(\comp{E})'$, and hence $\comp{(\interior{E})}\subset\cl{\comp{E}}$.
+
+      Conversely, let $x\in\cl{\comp{E}}$. If $x\in\comp{E}$, then as $\interior{E}\subset E$ it follows that $x\in\comp{(\interior{E})}$. Otherwise, $x$ is a limit point of $\comp{E}$. Then every neighbourhood of $x$ contains points of $\comp{E}$, hence no neighbourhoods of $x$ are contained in $E$. It follows that $x$ is not interior to $E$, so $x\in\comp{(\interior{E})}$. Therefore $\cl{\comp{E}}\subset\comp{(\interior{E})}$, so $\comp{(\interior{E})}=\cl{\comp{E}}$.
+    \end{solution}
 
     \part Do $E$ and $\cl{E}$ always have the same interiors?
+    \begin{solution}
+      No: consider the euclidean space $\R$, and let $E=\Q$. Since the irrationals are dense in $\R$, it follows that $\interior{E}=\emptyset$. However since the rationals are dense in $\R$, every real number is a limit point of $\Q$, hence $\cl{E}=\R$. Since $\R$ is open, it is its own interior. So $E$ and $\cl{E}$ do not have the same interior in this case.
+    \end{solution}
 
     \part Do $E$ and $\interior{E}$ always have the same closures?
+    \begin{solution}
+      No: consider once again the euclidean space $\R$ and let $E=\Q$. We have seen that $\cl{E}=\R$, and that $\interior{E}=\emptyset$. Hence the closure of $\interior{E}$ is also empty, so $E$ and $\interior{E}$ do not have the same closures.
+    \end{solution}
   \end{parts}
 
   \question Let $X$ be an infinite set. For $p\in X$ and $q\in X$, define
@@ -64,6 +108,17 @@
     \end{cases}
   \]
   Prove that this is a metric. Which subsets of the resulting metric space are open? Which are closed? Which are compact?
+  \begin{solution}
+    It is clear that $d(p,q)=1>0$ when $p\neq q$, $d(p,p)=0$, and that $d(p,q)=d(q,p)$ in all cases. We need to prove the triangle inequality. Let $p,q,r\in X$. If $p\neq r$ and $q\neq r$, then
+    \[ d(p,q) \leq 1 < 2 = d(p,r) + d(r,q). \]
+    Otherwise without loss of generality $p=r$. Then $d(p,q)=d(r,q)=d(p,r)+d(r,q)$. So the triangle inequality holds in all cases, hence $d$ is a metric.
+
+    All subsets of $X$ are open, for let $E\subset X$. If $p\in E$ then $N_{1/2}(x)=\{x\}\subset E$, hence all points of $E$ are interior, so $E$ is open. Since the complement of a set is open iff it is closed, it follows that all subsets of $X$ are also closed.
+
+    We claim that the compact subsets of $X$ are precisely the finite subsets of $X$. First note any open cover $\{G_\alpha\}$ of a finite subset $K\subset X$ has a finite subcover. Each $k\in K$ is contained in some $G_{\alpha_k}$, and the finite subcollection $\{G_{\alpha_k}\}_{k\in K}$ covers $K$.
+
+    Note that all subsets of $X$ are open, in particular singleton sets are open. Let $K\subset X$ be compact, then consider the open cover $\{\{k\}\}_{k\in K}$. Every element of $K$ is contained in precisely one element of the open cover, hence there are no proper subcovers. It follows that this open cover must be finite, hence $K$ is finite. So the compact subsets of $X$ are indeed the finite subsets of $X$.
+  \end{solution}
 
   \question For $x\in\R^1$ and $y\in\R^1$, define
   \begin{align*}
@@ -74,14 +129,50 @@
     d_5(x,y) &= \frac{\abs{x-y}}{1+\abs{x-y}}.
   \end{align*}
   Determine, for each of these, whether it is a metric or not.
+  \begin{solution}
+    The triangle inequality does not hold for $d_1$, as $d_1(0,1)+d(1,2)=1^2+1^2<2^2=d_1(0,2)$, hence $d_1$ is not a metric. We claim $d_2$ is a metric. It is clear that $d_2(x,y)>0$ when $x\neq y$, and that $d_2(x,x)=0$. Also $d_2(x,y)=d_2(y,x)$ holds for all $x,y$, since $\abs{x-y}=\abs{y-x}$. Let $x,y,z\in\R^1$, then
+    \begin{align*}
+      \abs{x-y} + \abs{y-z} &\geq \abs{x-z} \tag{Triangle Inequality} \\
+      \implies \abs{x-y} + 2\sqrt{\abs{x-y}}\sqrt{\abs{y-z}} + \abs{y-z} &\geq \abs{x-z} \\
+      \implies (\sqrt{\abs{x-y}} + \sqrt{\abs{y-z}})^2 &\geq \abs{x-z} \\
+      \implies \sqrt{\abs{x-y}} + \sqrt{\abs{y-z}} &\geq \sqrt{\abs{x-z}},
+    \end{align*}
+    hence $d_2(x,y)+d_2(y,z)\geq d_2(x,z)$. So $d_2$ is a metric. Now $d_3$ and $d_4$ are not metrics, as $d_3(1,-1)=d_4(2,1)=0$, but $1\neq-1$ and $2\neq1$. We claim that $d_5$ is a metric. It is clear $d_5(x,y)>0$ when $x\neq y$, and that $d_5(x,x)=0$. Also $d_5(x,y)=d_5(y,x)$. Let $x,y,z\in\R^1$, then
+    \begin{align*}
+      \frac{\abs{x-y}}{1+\abs{x-y}} + \frac{\abs{y-z}}{1+\abs{y-z}} &\geq \frac{\abs{x-y}}{1+\abs{x-y}+\abs{y-z}} + \frac{\abs{y-z}}{1+\abs{x-y}+\abs{y-z}} \\
+                                                                    &= 1 - \frac{1}{1+\abs{x-y}+\abs{y-z}} \\
+                                                                    &\geq 1 - \frac{1}{1+\abs{x-z}} \tag{Triangle Inequality} \\
+                                                                    &= \frac{\abs{x-z}}{1+\abs{x-z}},
+    \end{align*}
+    hence $d_5(x,y)+d_5(y,z)\geq d_5(x,z)$. So $d_5$ is a metric.
+  \end{solution}
 
   \question Let $K\subset\R^1$ consist of 0 and the numbers $1/n$, for $n=1,2,3,$ \ldots. Prove that $K$ is compact directly from the definition (without using the Heine-Borel theorem).
+  \begin{solution}
+    Let $\{G_\alpha\}$ be an open over of $K$. There must be an open set $G_{\alpha_0}$ in the cover containing 0. Since $G_{\alpha_0}$ is open, there is a neighbourhood $N_r(0)\subset G_{\alpha_0}$, so that $1/n\in G_{\alpha_0}$ whenever $1/n<r$. Let $N\in\N$ be such that $Nr>1$. For each $n=1,\ldots,N-1$, there exists an open set $G_{\alpha_n}$ in the cover such that $1/n\in G_{\alpha_n}$.
+
+    We claim that the finite subcollection $\{G_{\alpha_0}, G_{\alpha_1}, \ldots, G_{\alpha_{N-1}}\}$ covers $K$. Note $0\in G_{\alpha_0}$, and $1/n\in G_{\alpha_0}$ whenever $nr>1$. If $nr\leq 1$, then $n\in\{1,\ldots,N-1\}$ and so $n\in G_{\alpha_n}$. So every open cover of $K$ has a finite subcover, hence $K$ is compact.
+  \end{solution}
 
   \question Construct a compact set of real numbers whose limit points for a countable set.
 
   \question Give an example of an open cover of the segment $(0,1)$ which has no finite subcover.
+  \begin{solution}
+    Define $G_n=(1/n,1)$, for $n=2,3,4,\ldots.$ Then $\{G_n\}$ is an open cover of $(0,1)$, since for every $x\in(0,1)$ there exists an $n\in\N$, $n\geq2$ with $nx>1$, i.e. $1/n<x<1$, so $x\in G_n$.
 
-  \question Show that Theorem 2.36 and its Corollary become false (in $R^1$, for example) if the word ``compact'' is replaced by ``closed'' or by ``bounded.''
+    Let $\{G_{n_1},\ldots,G_{n_k}\}$ be a finite subcollection of $\{G_n\}$, and take $N=\max\{n_1,\ldots,n_k\}$. Then $G_{n_j}\subset G_N=(1/N,1)$ for each $j=1,\ldots,k$, and $(1/N,1)\subsetneq(0,1)$, hence $\{G_{n_1},\ldots,G_{n_k}\}$ does not cover $(0,1)$. Therefore $\{G_n\}$ has no finite subcover.
+  \end{solution}
+
+  \question Show that Theorem 2.36 and its Corollary become false (in $\R^1$, for example) if the word ``compact'' is replaced by ``closed'' or by ``bounded.''
+  \begin{solution}
+    Theorem 2.36 is if $\{K_\alpha\}$ is a collection of compact subsets of a metric space $X$ such that the intersection of every finite subcollection of $\{K_\alpha\}$ is nonempty, then $\bigcap K_\alpha$ is nonempty. Its Corollary is if $\{K_n\}$ is a sequence of nonempty compact sets such that $K_n\supset K_{n+1}$ ($n=1,2,3,\ldots$), then $\bigcap_1^\infty K_n$ is nonempty.
+
+    The Corollary is simply a special case of the Theorem, so it suffices to find counterexamples to the Corollary with the word ``compact'' replaced by ``closed'', and replaced by ``bounded''.
+
+    Define the sequence $\{F_n\}$ of closed sets by $F_n=[n,\infty)$. Then each $F_n$ is nonempty and $F_n\supset F_{n+1}$, however $\bigcap_1^\infty F_n=\emptyset$, as for each $x\in\R$ there exists an $n\in\N$ with $n>x$, and then $x\notin F_n$.
+
+    Define the sequence $\{G_n\}$ of bounded sets by $G_n=(0,1/n]$. Then each $G_n$ is nonempty and $G_n\supset G_{n+1}$, however $\bigcap_1^\infty G_n=\emptyset$, because $x\in G_n$ iff $1/x\in F_n$, and we already saw $\bigcap_1^\infty F_n=\emptyset$.
+  \end{solution}
 
   \question Regard $\Q$, the set of all rational numbers, as a metric space, with $d(p,q)=\abs{p-q}$. Let $E$ be the set of all $p\in\Q$ such that $2<p^2<3$. Show that $E$ is closed and bounded in $\Q$, but that $E$ is not compact. Is $E$ open in $\Q$?
 
