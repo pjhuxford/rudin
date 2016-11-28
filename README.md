@@ -41,3 +41,6 @@ Please make use of the following macros. Any other common commands may be turned
  * Norm: `\norm{expr}` produces `||expr||`. For a version which resizes the brackets automatically use `\norm*{expr}`
  * Vectors: `\vec{v}` produces **v**
  * Complex Conjugation: `\conj{z}` produces the complex conjugate of `z`
+ * Closure: `\cl{E}` produces the closure of the set `E`
+ * Interior: `\interior{E}` produces the interior of the set `E`
+ * Complement: `\comp{E}` produces the complement of the set `E`
