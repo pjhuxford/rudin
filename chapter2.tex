@@ -175,6 +175,17 @@
   \end{solution}
 
   \question Regard $\Q$, the set of all rational numbers, as a metric space, with $d(p,q)=\abs{p-q}$. Let $E$ be the set of all $p\in\Q$ such that $2<p^2<3$. Show that $E$ is closed and bounded in $\Q$, but that $E$ is not compact. Is $E$ open in $\Q$?
+  \begin{solution}
+    Define $F\subset\R$ and $G\subset\R$ by
+    \[ F = [-\sqrt{3},-\sqrt{2}] \cup [\sqrt{2},\sqrt{3}], \qquad G = (-\sqrt{3},-\sqrt{2}) \cup (\sqrt{2},\sqrt{3}). \]
+    Clearly $F$ is a closed subset of $\R$, and $G$ is an open subset of $\R$. Also
+    \[ 2 < p^2 < 3 \iff -\sqrt{3} < p < -\sqrt{2} \quad \text{or} \quad \sqrt{2} < p < \sqrt{3}. \]
+    Since no rational $p$ satisfies $p^2=2$ or $p^2=3$, it follows that $E=F\cap\Q=G\cap\Q$. Hence $E$ is a closed and open subset of $\Q$. Also if $d(0,p)\geq2$, then $p^2\geq4$, hence $p\notin E$. Therefore $d(0,p)<2$ for all $p\in E$ and so $E$ is bounded.
+
+    Define $G_n=(-\infty,\sqrt{3}-1/n)\subset\R$ for each $n\in\N$, then $G_n\cap\Q$ is open in $\Q$ for all $n$. We claim $\{G_n\cap\Q\}$ is an open cover of $E$. If $p\in E$ then $p\in\Q$ and $p<\sqrt{3}$. Let $n\in\N$ be such that $n(\sqrt{3}-p)>1$. Then $p<\sqrt{3}-1/n$, so that $p\in G_n\cap\Q$. Therefore $E\subset\bigcup_1^\infty (G_n\cap\Q)$.
+
+    Let $\{G_{n_1},\ldots,G_{n_k}\}$ be a finite subcollection of $\{G_n\}$. Take $N=\max\{n_1,\ldots,n_k\}$, then $G_{n_j}\subset G_N$ for all $j=1,\ldots,k$. Due to the density of $\Q$ in $\R$, there is a $p\in\Q$ satisfying $\max\{\sqrt{2},\sqrt{3}-1/N\}<p<\sqrt{3}$. Hence $p\in E$, however $p\notin G_N$ so that $E\not\subset G_N\cap\Q$. Therefore $\{G_{n_1}\cap\Q,\ldots,G_{n_k}\cap\Q\}$ does not cover $E$, hence the cover $\{G_n\cap\Q\}$ of $E$ has no finite subcovers. It follows that $E$ is not compact.    
+  \end{solution}
 
   \question Let $E$ be the set of all $x\in[0,1]$ whose decimal expansion contains only the digits 4 and 7. Is $E$ countable? Is $E$ dense in $[0,1]$? Is $E$ compact? Is $E$ perfect?
 
