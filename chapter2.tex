@@ -29,6 +29,18 @@
   \end{solution}
 
   \question Construct a bounded set of real numbers with exactly three limit points.
+  \begin{solution}
+    Let
+    $$S=\{1/n\,|\,n\in\N\}\cup\{1+1/n\,|\,n\in\N\}\cup\{2+1/n\,|\,n\in\N\}.$$
+    We see immeditaely that $S$ is bounded as $[0,3]=N_{3/2}(3/2)\supset S$. Let $p\in\R$ be a limit point of S. If $p\notin[0,3]$, set $\varepsilon=\min\{d(p,0), d(p,3)\}>0$. Then clearly $N_{\varepsilon/2}(p)$ contains no elements of $S$, a contradiction. Furthermore, observe that $N_{1/2}(3)\bigcap S=\{3\}$, so 3 is not a limit point of $S$. Hence $p\in[0,3)$.
+    
+    Suppose there is $n\in\{0,1,2\}$ such that $p\in(n,n+1)$. Clearly this $n$ is unique. Then there is a minimal $k\in\N$ such that $n+1/k<p$, and $k>1$. Then $p\in[n+1/k, n+1/(k-1)]$, however $[n+1/k, n+1/(k-1)]\bigcap S = \{n+1/k, n+1/(k-1)\}$. If $p$ is in the open set $(n+1/k, n+1/(k-1))$, there is a neighborhood of $p$ that lies in $(n+1/k, n+1/(k-1))$ and hence contains no elements of S other than $p$, which is impossible. So $p=n+1/\ell$ for some integer $\ell>1$ (since it was assumed $p\notin\Z$). So let
+    $$\varepsilon=\frac{1}{2}\left(p-\left(n+\frac{1}{\ell+1}\right)\right)=\frac{1}{2\ell(\ell+1)}$$
+    Then $N_\varepsilon(p)$ contains no points of $S$ other than $p$. Hence $p$ is not a limit point of $S$ in this case either. Suppose, then, that $p$ is any element of the set
+    $$[0,3)\setminus((0,1)\cup(1,2)\cup(2,3))=\{0,1,2\}.$$
+   and let $r>0$. There exists $n\in\N$ such that $1/n<r$, hence $S\ni p+1/n\in N_r(p)$, so that the limit points of $S$ are exactly the points 0, 1 and 2.
+  \end{solution}
+
 
   \question Let $E'$ be the set of all limit points of a set $E$. Prove that $E'$ is closed. Prove that $E$ and $\cl{E}$ have the same limit points. (Recall that $\cl{E}=E\cup E'$.) Do $E$ and $E'$ always have the same limit points?
   \begin{solution}
@@ -179,7 +191,7 @@
   \question Let $E$ be the set of all $x\in[0,1]$ whose decimal expansion contains only the digits 4 and 7. Is $E$ countable? Is $E$ dense in $[0,1]$? Is $E$ compact? Is $E$ perfect?
 
   \question Is there a nonempty perfect set in $\R^1$ which contains no rational number?
-
+  
   \question
   \begin{parts}
     \part If $A$ and $B$ are disjoint closed sets in some metric space $X$, prove that they are separated.
