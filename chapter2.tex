@@ -212,6 +212,24 @@
   \end{solution}
   
   \question Is there a nonempty perfect set in $\R^1$ which contains no rational number?
+  \begin{solution}
+    Let $a_0,b_0$ be any two distinct irrationals. Let $q_1,q_2,\ldots$ be an enumeration of the countably many rationals in $P_0\coloneqq[a_0,b_0]$. Suppose that a sequence of closed sets $P_0,P_1,\ldots,P_n$ and sequences of irrationals $a_0,a_1,\ldots,a_n$, $b_0,b_1,\ldots,b_n$ have been defined so that for all $0\leq k\leq n$, $a_k,b_k\in P_n$, for all $1\leq k\leq n$, $P_k=P_{k-1}\setminus(a_k,b_k)$ and $q_k\in(a_k,b_k)$, and $a_i\neq b_j$ for all $0\leq i,j\leq n$.
+
+    We now define $a_{n+1},b_{n+1},P_{n+1}$. If $q_{n+1}\in(a_k,b_k)$ for some $1\leq k\leq n$, then define $a_{n+1}=a_k$, $b_{n+1}=b_k$. Otherwise, define
+    \[ \delta = \min_{0\leq k\leq n}\{\abs{q_{n+1}-a_k}, \abs{q_{n+1}-b_k}\} > 0. \]
+    Due to the density of the irrationals in $\R$, there exist irrationals $a_{n+1},b_{n+1}$ with
+    \[ q_{n+1}-\delta<a_{n+1}<q_{n+1}<b_{n+1}<q_{n+1}+\delta. \]
+    Moreover by the definition of $\delta$, $a_k,b_k\notin[a_{n+1},b_{n+1}]$ for all $0\leq k\leq n$. Hence if we define $P_{n+1}=P_n\setminus(a_{n+1},b_{n+1})$, then $a_k,b_k\in P_{n+1}$ for all $0\leq k\leq n+1$, and $a_k\neq b_{n+1}$, $a_{n+1}\neq b_k$ for all $0\leq k\leq n$.
+
+    This produces a sequence of nonempty closed sets $P_0\supset P_1\supset P_2\supset\cdots$, and disjoint sequences of irrationals $a_0,a_1,\ldots,$ $b_0,b_1,\ldots,$ such that $q_k\in(a_k,b_k)$, and $(a_k,b_k)\subset\comp{P_k}$. Define $P=\bigcap_0^\infty P_n$, then $P$ is nonempty and closed. By construction it contains no rational numbers. We seek to prove $P$ is perfect.
+
+    Let $p\in P\subset[a_0,b_0]$, then we claim $p$ is a limit point of $P$. Let $r>0$. Suppose that $p\neq b_0$ and $p\neq a_n$ for any $n\geq1$, and define $\varepsilon=\min\{r,b_0-p\}>0$. There is a rational $q_k$ with $p<q_k<p+\varepsilon$. Note $q_k\in(a_k,b_k)$, and $(a_k,b_k)\subset\comp{P}$. Since $p\in P$ it follows $p\notin[a_n,b_n)$, and hence
+    \[ p < a_k < q_k < p + \varepsilon. \]
+
+    Otherwise $p=b_0$ or $p=a_n$ for some $n\geq1$. Then $p\neq b_k$ for any $k\geq1$. Define $\varepsilon=\min\{p-a_0,r\}$, then there is a rational $q_k$ with $p-\varepsilon<q_k<p$. Then $p\notin(a_k,b_k]$, and $q_k\in(a_k,b_k)$, hence
+    \[ p-\varepsilon < q_k < b_k < p. \]
+    In either case, as $a_k,b_k\in P$ for all $k\in\N$ it follows that $N_r(p)$ contains a point $q\neq p$ in $P$, for all $r>0$. Hence all points $p\in P$ are limit points of $P$, so that $P$ is perfect.
+  \end{solution}
   
   \question
   \begin{parts}
