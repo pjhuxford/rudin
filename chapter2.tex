@@ -208,7 +208,9 @@
     
 	Let $p$ be a limit point of $E$ and $n$ a positive integer. Clearly, $p\in[0,1]$. There exists an $x\in E$ such that $|p-x|<10^{-n-1}/5$. The decimal expansion of $p-x$ thus has a $0$ in the $10^{-n}$ position and at most a $2$ in the $10^{-n-1}$ position, so the $n$th digit of $p=x+p-x$ following the decimal point agrees with that of $x$. We conclude that for every positive integer $n$, the $n$th digit of $p$ following the decimal point is either $4$ or $7$, hence $p\in E$, so $E$ is a closed subset of the compact set $[0,1]$, hence is compact.
     
-    Finally, $N_{0.04}(0.4)\cap E=\{0.4\}$ so $0.4$ is an isolated point of $E$, hence $E$ is not perfect.
+    Finally, let $p\in E$, and $\varepsilon>0$. Choose a positive integer $n$ such that $10^{1-n}<\varepsilon$ and denote by $p_i$ the $i$th digit of $p$ following the decimal place. Define
+    $$x_i=\begin{cases}p_i & \text{if }i\neq n\\7 & \text{if }i=n\text{ and }p_i=4\\4 & \text{if }i=n\text{ and }p_i=7\end{cases}$$
+    and let $x=\sum_nx_n10^{-n}$. Then $x\in E$ and $|x-p|=(7-4)\cdot 10^{-n}<10^{1-n}<\varepsilon$ hence $E$ is perfect.
   \end{solution}
   
   \question Is there a nonempty perfect set in $\R^1$ which contains no rational number?
