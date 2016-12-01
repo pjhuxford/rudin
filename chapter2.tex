@@ -236,12 +236,26 @@
   \question
   \begin{parts}
     \part If $A$ and $B$ are disjoint closed sets in some metric space $X$, prove that they are separated.
+    \begin{solution}
+      We have $A=\cl{A}$ and $B=\cl{B}$, hence $A\cap\cl{B}$ and $\cl{A}\cap B$ are empty
+    \end{solution}
 
     \part Prove the same for disjoint open sets.
+    \begin{solution}
+      Let $A$ and $B$ be disjoint open sets in some metric space $X$, and let $a\in A$. Then $a\notin B$, and since $A$ is open there is a neighbourhood $N$ of $a$ with $N\subset A$. Therefore $N$ is disjoint from $B$, and so $a$ is not a limit point of $B$. Hence $a\notin\cl{B}$, so $A\cap\cl{B}$ is empty. Similarly $\cl{A}\cap B$ is empty, so $A$ and $B$ are separated.
+    \end{solution}
 
     \part Fix $p\in X$, $\delta>0$, define $A$ to be the set of all $q\in X$ for which $d(p,q)<\delta$, define $B$ similarly, with $>$ in place of $<$. Prove that $A$ and $B$ are separated.
+    \begin{solution}
+      It is clear $A$ and $B$ are disjoint. Since $A=N_\delta(p)$, it is open. Let $b\in B$, and define $\varepsilon=d(p,b)-\delta>0$. Let $x\in N_\varepsilon(b)$, then by the triangle inequality
+      \[ d(p,x) + \varepsilon > d(p,x) + d(x,b) \geq d(p,b) \implies d(p,x) > d(p,b) - \varepsilon = \delta, \]
+      hence $x\in B$. Therefore all points $b\in B$ are interior $B$, so $B$ is open. By the previous part, $A$ and $B$ are separated.
+    \end{solution}
 
     \part Prove that every connected metric space with at least two points is uncountable. \emph{Hint:} Use (c).
+    \begin{solution}
+      Let $X$ be a connected metric space with at least two points, say $p,q$ are distinct points of $X$. Define $r=d(p,q)>0$. For every $\delta\in(0,r)$, there exists an $x\in X$ with $d(p,x)=\delta$, otherwise $A=\{x\in X \mid d(p,x) < \delta\}$ and $B=\{x\in X \mid d(p,x) > \delta\}$ are nonempty separated sets by the previous part, with $A\cup B=X$. Since $[0,r]$ is uncountable it follows that $X$ is also uncountable.
+    \end{solution}
   \end{parts}
 
   \question Are closures and interiors of connected sets always connected? (Look at subset of $\R^2$.)
