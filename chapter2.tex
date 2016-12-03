@@ -258,17 +258,43 @@
     \end{solution}
   \end{parts}
 
-  \question Are closures and interiors of connected sets always connected? (Look at subset of $\R^2$.)
+  \question Are closures and interiors of connected sets always connected? (Look at subsets of $\R^2$.)
+  \begin{solution}
+    Suppose that $E$ is connected and that $\cl{E}=A\cup B$ for some separated sets $A$ and $B$. Then $E\subset A\cup B$, and hence $E=(A\cap X)\cup(B\cap X)$. Now since $\cl{A\cap E}\subset\cl{A}$ and $\cl{B\cap E}\subset\cl{B}$, it follows that $A\cap E$ and $B\cap E$ are also separated. They cannot both be nonempty as $E$ is connected, so without loss of generality suppose $A\cap E=\emptyset$.
+
+    Since $E\subset A\cup B$ and $A\cap E=\emptyset$, it follows $E\subset B$, so $\cl{E}\subset\cl{E}$. Now $A\cap\cl{B}=\emptyset$, hence $A\cap\cl{E}=\emptyset$. However $A\subset A\cup B=\cl{E}$, so we must have $A=\emptyset$. It follows that $\cl{E}$ cannot be written as the union of two nonempty separated sets, so closures of connected sets are connected.
+
+    Interiors of connected sets are not necessarily connected. It will follow from the next exercise that all neighbourhoods in $\R^2$ are connected (since they are convex). Let $F=N\cup M\cup\{(1,0)\}$, where $N=N_1((0,0))$ and $M=N_1((2,0))$, then we claim that $F$ is connected.
+
+    Suppose $F=A\cup B$ where $A$ and $B$ are separated. Then $A\cap N$ and $B\cap N$ are separated, and since $N$ is connected one must be empty. Without loss of generality $N\cap A=\emptyset$, and so $N\subset B$. Similarly either $M\subset A$ or $M\subset B$.
+
+    Note $(1,0)\in\cl{N}\subset\cl{B}$, hence $(1,0)\notin A$, and so $(1,0)\in B$. If $M\subset A$ a similar argument would give $(1,0)\in A$, which is a contradiction. Hence $M\subset B$. Then $F\subset B$, so $F=B$ and $A\cap F=\emptyset$. It follows that $E$ cannot be written as the union of two nonempty separated sets, so it is indeed connected.
+
+    Now since $N$ and $M$ are open it follows that $N\cup M\subset\interior{F}$. Also $(1,0)\notin\interior{F}$, since every neighbourhood $N_r((1,0))$ contains a point $(1,r/2)$ not in $F$. Hence $\interior{F}=N\cup M$. Moreover
+    \[ \cl{N} = \{\vec{x}\in\R^2 : \abs{\vec{x}} \leq 1\}, \qquad \cl{M} = \{\vec{x}\in\R^2 : \abs{\vec{x}-(2,0)} \leq 1\}. \]
+    By the triangle inequality $\abs{\vec{x}}+\abs{\vec{x}-(2,0)}\geq\abs{(2,0)}=2$, hence $N\cap\cl{M}=\cl{N}\cap M=\emptyset$. Therefore $N$ and $M$ are nonempty separated sets, so that $\interior{F}$ is not connected.
+  \end{solution}
 
   \question Let $A$ and $B$ be separated subsets of some $\R^k$, suppose $\vec{a}\in A$, $\vec{b}\in B$, and define
   \[ \vec{p}(t) = (1-t)\vec{a} + t\vec{b} \]
   for $t\in\R^1$. Put $A_0=\vec{p}^{-1}(A)$, $B_0=\vec{p}^{-1}(B)$. [Thus $t\in A_0$ if and only if $\vec{p}(t)\in A$.]
   \begin{parts}
     \part Prove that $A_0$ and $B_0$ are separated subsets of $\R^1$.
+    \begin{solution}
+      Let $t\in A_0$, so that $\vec{p}(t)\in A$. Then $\vec{p}(t)\notin\cl{B}\supset B$, hence $t\notin B_0$. Since $\vec{p}(t)$ is not a limit point of $B$, there exists a neighbourhood $N_r(\vec{p}(t))$ which does not intersect $B$. Define $\varepsilon=r/\abs{\vec{b}-\vec{a}}$, and let $s\in N_\varepsilon(t)\subset\R$. Then
+      \[ \abs{\vec{p}(s) - \vec{p}(t)} = \abs{s-t}\abs{\vec{b}-\vec{a}} < r, \]
+      so that $\vec{p}(s)\in N_r(\vec{p}(t))$. Hence $\vec{p}(s)\notin B$, so $s\notin B_0$. It follows that $N_\varepsilon(t)$ does not intersect $B_0$, hence $t$ is not a limit point of $B_0$. Therefore $A_0\cap\cl{B_0}$ is empty, and similarly $\cl{A_0}\cap B_0$ is empty, so $A_0$, $B_0$ are separated subsets of $\R^1$.
+    \end{solution}
 
     \part Prove that there exists $t_0\in(0,1)$ such that $\vec{p}(t_0)\notin A\cup B$.
+    \begin{solution}
+      Let $\alpha = \sup(A_0\cap[0,1])$. Note $\alpha\notin B_0$ since $\alpha_0\in A_0'$, hence $\alpha<1$. Suppose that $\alpha\notin A_0$, then $\alpha\in(0,1)$, so if we let $t_0=\alpha$, then $t_0\notin A_0\cup B_0$. If $\alpha\in A_0$, then $\alpha$ is not a limit point of $B_0$. Hence there exists $t_0$ with $\alpha<t_0<1$ and $t_0\notin B_0$. As $\alpha$ is an upper bound of $A_0$, $t_0\notin A_0$, so that $t_0\notin A_0\cup B_0$. In all cases there is some $t_0\in(0,1)$ such that $t\notin A_0\cup B_0$, and so $\vec{p}(t_0)\notin A\cup B$.
+    \end{solution}
 
     \part Prove that every convex subset of $\R^k$ is connected.
+    \begin{solution}
+      Let $C\subset\R^k$ be convex, and suppose $C=A\cup B$ for some separated sets $A$ and $B$. If $\vec{a}\in A$ and $\vec{b}\in B$, then part (b) shows that there is some $t_0\in(0,1)$ for which $(1-t_0)\vec{a}+t_0\vec{b}\notin A\cup B$. This contradicts the convexity of $C$, hence one of $A$, $B$ must be empty.
+    \end{solution}
   \end{parts}
 
   \question A metric space is called separable if it contains a countable dense subset. Show that $\R^k$ is separable. \emph{Hint:} Consider the set of points which have only rational coordinates.
