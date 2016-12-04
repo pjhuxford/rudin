@@ -298,16 +298,63 @@
   \end{parts}
 
   \question A metric space is called separable if it contains a countable dense subset. Show that $\R^k$ is separable. \emph{Hint:} Consider the set of points which have only rational coordinates.
+  \begin{solution}
+    We show that $\Q^k$ is a countable dense subset of $\R^k$. First note that $\Q$ is countable. Suppose that $\Q^k$ is countable for some $k$, then
+    \[ \Q^k\times\Q = \bigcup_{q\in\Q} \left(\Q^k\times\{q\}\right). \]
+    $\Q^k\times\Q$ is countable, as it is a countable union of countable sets. There is an obvious bijection from $\Q^{k+1}$ to $\Q^k\times\Q$, hence by induction $\Q^k$ is countable for all $k\in\N$.
+
+    Let $\vec{x}=(x_1,\ldots,x_k)\in\R^k$, and consider a neighbourhood $N_r(\vec{x})$ of $\vec{x}$. By the density of $\Q$ in $\R$ there exists $q_i\in\Q$ with $0<\abs{x_i-q_i}<r/\sqrt{k}$, for each $i=1,\ldots,k$. Define $\vec{q}=(q_1,\ldots,q_k)\in\Q^k$, then $\vec{x}\neq\vec{q}$ and
+    \[ \abs{\vec{x}-\vec{q}}^2 = \abs{x_1-q_1}^2 + \cdots + \abs{x_k-q_k}^2 < r^2/k + \cdots + r^2/k = r^2, \]
+    hence $\abs{\vec{x}-\vec{q}}<r$, so $\vec{q}\in N_r(\vec{x})$. Therefore $\Q^k$ is dense in $\R^k$, so $\R^k$ is separable.
+  \end{solution}
 
   \question A collection $\{V_\alpha\}$ of open subsets of $X$ is said to be a \emph{base} for $X$ if the following is true: For every $x\in X$ and every open set $G\subset X$ such that $x\in G$, we have $x\in V_\alpha\subset G$ for some $\alpha$. In other words, every open set in $X$ is the union of a subcollection of $\{V_\alpha\}$.
 
   Prove that every separable metric space has a \emph{countable} base. \emph{Hint:} Take all neighbourhoods with rational radius and center in some countable dense subset of $X$.
+  \begin{solution}
+    Let $X$ be a separable metric space, and let $D$ be a countable dense subset of $X$. Consider the collection $B$ of neighbourhoods of rational radius centered at points of $D$. This is countable, since $\Q\times D = \bigcup_{q\in\Q} (\{q\}\times D)$ is countable. We will show that $B$ forms a base of $X$.
 
-  \question Let $X$ be a metric space in which every infinite subset has a limit point. Prove that $X$ is separable. \emph{Hint:} Fix $\delta>0$, and pick $x_1\in X$. Having chosen $x_1,\ldots,x_j\in X$, choose $x_{j+1}\in X$, if possible, so that $d(x_1,x_{j+1})\geq\delta$ for $i=1,\ldots,j$. Show that this process must stop after a finite number of steps, and that $X$ can therefore be covered by finitely many neighbourhoods of radius $\delta$. Take $\delta=1/n$ ($n=1,2,3,\ldots$), and consider the centers of the corresponding neighbourhoods.
+    Let $x\in X$ and let $G\subset X$ be open with $x\in G$. There exists a neighbourhood with $N_r(x)\subset G$. Since $\Q$ is dense in $\R$ there is a $q\in\Q$ with $0<q<r/2$, and as $D$ is dense in $X$ there is a $p\in D$ with $p\in N_q(x)$. Note $N_q(p)\in B$. We show that $x\in N_q(p)\subset G$. Clearly $x\in N_q(p)$. Let $y\in N_q(p)$, then by the triangle inequality
+    \[ d(y,x) \leq d(y,p) + d(p,x) < 2q < r, \]
+    so $y\in N_r(x)$. Hence $N_q(p)\subset N_r(x)\subset G$, and therefore $B$ is a base of $X$.
+  \end{solution}
+
+  \question Let $X$ be a metric space in which every infinite subset has a limit point. Prove that $X$ is separable. \emph{Hint:} Fix $\delta>0$, and pick $x_1\in X$. Having chosen $x_1,\ldots,x_j\in X$, choose $x_{j+1}\in X$, if possible, so that $d(x_i,x_{j+1})\geq\delta$ for $i=1,\ldots,j$. Show that this process must stop after a finite number of steps, and that $X$ can therefore be covered by finitely many neighbourhoods of radius $\delta$. Take $\delta=1/n$ ($n=1,2,3,\ldots$), and consider the centers of the corresponding neighbourhoods.
+  \begin{solution}
+    Fix $\delta>0$, and suppose the described procedure did not stop after a finite number of steps. This would yield an infinite subset $S=\{x_1,x_2,\ldots\}$ of $X$ such that $d(x_i,x_j)\geq\delta$ for all $i\neq j$. Let $x\in X$, and suppose that $x_i,x_j\in N_{\delta/2}(x)$. Then
+    \[ d(x_i,x_j)\leq d(x_i,x) + d(x_j,x) < \delta/2 + \delta/2 = \delta, \]
+    hence $i=j$. So at most one element of $S$ is in $N_{\delta/2}(x)$, which means $x$ is not a limit point of $S$. But then $S$ is an infinite subset of $X$ with no limit point, which is a contradiction.
+
+    Hence there exists a finite subset $\{x_1,x_2,\ldots,x_j\}$ of $X$ such that there is no $x\in X$ satisfying $d(x_i,x)\geq\delta$ for $i=1,\ldots,j$. Therfore if $x\in X$, then $x\in N_\delta(x_i)$ for some $i=1,\ldots,j$, and so $X$ can be covered by finitely many neighbourhoods of radius $\delta$.
+
+    In particular $X$ can be covered by finitely many neighbourhoods of radius $1/n$. Let $D_n$ be the set of centers from such a finite collection of neighbourhoods, and define $D=\bigcup_{n=1}^\infty D_n$. Then $D$ is countable as it is a countable union of finite sets.
+
+    We prove that $D$ is dense in $X$. Let $x\in X$, and let $N_r(x)$ be a neighbourhood of $x$. Take $n\in\N$ so that $nr>1$. There is a $d\in D_n\subset D$ such that $x\in N_{1/n}(d)$, hence $d\in N_{1/n}(x)\subset N_r(x)$. Therefore $D$ is dense in $X$, and so $X$ is separable.
+  \end{solution}
 
   \question Prove that every compact metric space $K$ has a countable base, and that $K$ is therefore separable. \emph{Hint:} For every positive integer $n$ there are finitely many neighbourhoods of radius $1/n$ whose union covers $K$.
+  \begin{solution}
+    For each $n\in\N$, the collection $\{N_{1/n}(k) \mid k\in K\}$ is an open cover of $K$, and hence has a finite subcover $B_n$. Let $B=\bigcup_{n=1}^\infty B_n$, then $B$ is countable as it is a countable union of finite sets. We prove that $B$ is a base of $K$.
+
+    Let $k\in K$ and suppose $G\subset K$ is open with $k\in G$. Then there is a neighbourhood $N_r(k)\subset G$. Take $n\in\N$ so that $nr>2$, then since $B_n$ covers $K$, there is a neighbourhood $N_{1/n}(x)\in B_n\subset B$ with $k\in N_{1/n}(x)$. We claim $N_{1/n}(x)\subset G$. Let $y\in N_{1/n}(x)$, then
+    \[ d(y,k) \leq d(y,x) + d(x,k) < 1/n + 1/n < r, \]
+    hence $y\in N_r(k)\subset G$. So $N_{1/n}(x)\subset G$, and therefore $B$ is a countable base of $K$. The centers of the neighbourhoods in $B$ form a countable dense subset of $K$, however it is possible to show in general that if a metric space has a countable base $B$ it is separable.
+
+    Enumerate the nonempty open sets $\{V_1,V_2,\ldots\}$ of $B$, and for each $n\in\N$ let $x_n\in V_n$. Then $D=\{x_1,x_2,\ldots\}$ forms a countable dense subset of $K$, since any neighbourhood $N$ contains some $V_n$, and then $x_n\in V_n\subset N$. Hence $K$ is separable.
+  \end{solution}
 
   \question Let $X$ be a metric space in which every infinite subset has a limit point. Prove that $X$ is compact. \emph{Hint:} By Exercises 23 and 24, $X$ has a countable base. It follows that every open cover of $X$ has a \emph{countable} subcover $\{G_n\}$, $n=1,2,3,$ \ldots. If no finite subcollection of $\{G_n\}$ covers $X$, then the complement $F_n$ of $G_1\cup\cdots\cup G_n$ is nonempty for each $n$, but $\bigcap F_n$ is empty. If $E$ is a set which contains a point from each $F_n$, consider a limit point of $E$, and obtain a contradiction.
+  \begin{solution}
+    By Exercises \textbf{23} and \textbf{24}, $X$ has a countable base $\{V_n\}$. Let $\{G_\alpha\}$ be an open cover of $X$. For each $n\in\N$, let $G_n$ be an element of the cover containing $V_n$, if such an element exists, otherwise let $G_n=\emptyset$. Then the collection $\{G_n\}$ is at most countable.
+
+    Let $x\in X$, then $x\in G_\alpha$ for some $\alpha$. Since $\{V_n\}$ is a base of $X$, there is some $V_n$ with $x\in V_n\subset G_\alpha$. Therefore $G_n\neq\emptyset$ and so $V_n$ is contained in $G_n$. Hence $x\in G_n$, and so $\{G_n\}$ is an at most countable subcover of $\{G_\alpha\}$.
+
+    Suppose that no finite subcollection of $\{G_n\}$ covers $X$, then the complement $F_n$ of $G_1\cup\cdots\cup G_n$ is nonempty for each $n$. Let $e_1\in F_1$, and supposing $e_1,\ldots,e_k$ have been defined, let $e_{k+1}\in F_{k+1}$ with $e_{k+1}\notin\{e_1,\ldots,e_k\}$. This is always possible, otherwise $F_{k+1}\subset\{e_1,\ldots,e_k\}$. Then $e_i\in G_{n_i}$ for some $n_1,\ldots,n_k$, and the finite collection $\{G_1,\ldots,G_k,G_{n_1},\ldots,G_{n_k}\}$ would cover $X$.
+
+    This yields an infinite set $E=\{e_1,e_2,\ldots\}$ with $e_k\in F_k$. Then $E$ has some limit point $x$. However since $\{G_n\}$ covers $X$, $x\in G_n$ for some $n$, and then there is a neighbourhood $N$ of $x$ with $x\in N\subset G_n$. But then $N$ can only contain finitely many points of $E$, as $e_k\notin G_n$ for $k\geq n$. This is a contradiction, as all neighbourhoods of $x$ must contain infinitely many points of $E$.
+
+    Therefore some finite subcollection of $\{G_n\}$ must cover $X$, so every open cover $\{G_\alpha\}$ has a finite subcover. Hence $X$ is compact.
+  \end{solution}
 
   \question Define a point $p$ in a metric space $X$ to be a \emph{condensation point} of a set $E\subset X$ if every neighbourhood of $p$ contains uncountably many points of $E$.
 
