@@ -358,9 +358,21 @@
 
   \question Define a point $p$ in a metric space $X$ to be a \emph{condensation point} of a set $E\subset X$ if every neighbourhood of $p$ contains uncountably many points of $E$.
 
-  Suppose $E\subset\R^k$, $E$ is uncountable, and let $P$ be the set of all condensation points of $E$. Prove that $P$ is perfect and that at most countably many points of $E$ are not in $P$. In other words, show that $P^c\cap E$ is at most countable. \emph{Hint:} Let $\{V_n\}$ be a countable base of $\R^k$, let $W$ be the union of those $V_n$ for which $E\cap V_n$ is at most countable, and show that $P=W^c$.
+  Suppose $E\subset\R^k$, $E$ is uncountable, and let $P$ be the set of all condensation points of $E$. Prove that $P$ is perfect and that at most countably many points of $E$ are not in $P$. In other words, show that $\comp{P}\cap E$ is at most countable. \emph{Hint:} Let $\{V_n\}$ be a countable base of $\R^k$, let $W$ be the union of those $V_n$ for which $E\cap V_n$ is at most countable, and show that $P=\comp{W}$.
+  \begin{solution}
+    By Exercises \textbf{22} and \textbf{23} we know that $\R^k$ has a countable base $\{V_n\}$. Let $W$ be the union of those $V_n$ for which $E\cap V_n$ is at most countable, then $W\cap E$ is at most countable. Let $p\in P$, then if $p\in V_n$ there is a neighbourhood $N$ of $p$ with $N\subset V_n$. As $p$ is a condensation point, $E\cap N$ is uncountable, and so $E\cap V_n$ is uncountable. It follows that $p\notin W$, and so $P\subset\comp{W}$.
+
+    Conversely suppose that $p\in\comp{E}$, and let $N$ be a neighbourhood of $p$. Since $\{V_n\}$ is a base, there is some $V_n$ with $p\in V_n\subset N$. Then because $p\notin W$, $E\cap V_n$ is uncountable, hence $E\cap N$ is uncountable. Therefore $p$ is a condensation point of $E$, so $p\in P$. This proves $W^c\subset P$, and hence $P=\comp{W}$.
+
+    We know that $\comp{P}\cap E=W\cap E$ is at most countable. It remains to prove $P$ is perfect. Being the union of open sets, $W$ is open and hence $P$ is closed. Let $p\in P$ and let $N$ be a neighbourhood of $p$. Then $E\cap N$ is uncountable, so $E\cap(N\setminus\{p\})$ is uncountable, and since $W\cap E$ is at most countable, we cannot have $(N\setminus\{p\})\subset W$. Hence $N$ contains a point $q\in P$ with $p\neq q$, and therefore $p$ is a limit point of $P$. It follows that $P$ is perfect.
+  \end{solution}
 
   \question Prove that every closed set in a separable metric space is the union of a (possibly empty) perfect set and a set which is at most countable (\emph{Corollary:} Every countable closed set in $\R^k$ has isolated points.) \emph{Hint:} Use Exercise 27.
+  \begin{solution}
+    Let $E$ be a closed subset of a separable metric space $X$. If $E$ is at most countable, then the result follows as $\emptyset$ is perfect. Otherwise, suppose that $E$ is uncountable, and let $P$ be the set of condensation points of $E$. Note the proof of Exercise \textbf{27} holds when $\R^k$ is replaced by any separable metric space, hence $P$ is perfect and $\comp{P}\cap E$ is at most countable.
+
+    Since $E$ is closed it contains all its limit points, so $P\subset E$. Hence $E=P\cup(\comp{P}\cap E)$, therefore $E$ is the union of a perfect set and a set which is at most countable.
+  \end{solution}
 
   \question Prove that every open set in $\R^1$ is the union of an at most countable collection of disjoint segments. \emph{Hint:} Use Exercise 22.
 
