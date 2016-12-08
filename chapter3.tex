@@ -1,1 +1,180 @@
 \section{Numerical Sequences and Series}
+
+\begin{questions}
+  \question Prove that convergence of $\{s_n\}$ implies convergence of $\{\abs{s_n}\}$. Is the converse true?
+
+  \question Calculate $\lim_{n\to\infty}(\sqrt{n^2+n}-n)$.
+
+  \question If $s_1=2$, and
+  \[ s_{n+1} = \sqrt{2+\sqrt{s_n}} \qquad (n=1,2,3,\ldots), \]
+  prove that $\{s_n\}$ converges, and that $s_n<2$ for $n=1,2,3\ldots.$
+
+  \question Find the upper and lower limits of the sequence $\{s_n\}$ defined by
+  \[ s_1 = 0; \qquad s_{2m} = \frac{s_{2m-1}}{2}; \qquad s_{2m+1} = \frac{1}{2} + s_{2m}. \]
+
+  \question For any two real sequences $\{a_n\}$, $\{b_n\}$, prove that
+  \[ \limsup_{n\to\infty} (a_n+b_n) \leq \limsup_{n\to\infty} a_n + \limsup_{n\to\infty} b_n, \]
+  provided the sum on the right is not of the form $\infty-\infty$.
+
+  \question Investigate the behaviour (convergence or divergence) of $\sum a_n$ if
+  \begin{parts}
+    \part $a_n=\sqrt{n+1}-\sqrt{n}$;
+
+    \part $a_n=\dfrac{\sqrt{n+1}-\sqrt{n}}{n}$;
+
+    \part $a_n=(\sqrt[n]{n}-1)^n$;
+
+    \part $a_n=\dfrac{1}{1+z^n}$, \qquad for complex values of $z$.
+  \end{parts}
+
+  \question Prove that the convergence of $\sum a_n$ implies the convergence of
+  \[ \sum \frac{\sqrt{a_n}}{n} \]
+  if $a_n\geq0$.
+
+  \question If $\sum a_n$ converges, and if $\{b_n\}$ is monotonic and bounded, prove that $\sum a_nb_n$ converges.
+
+  \question Find the radius of convergence of each of the following power series:
+  \begin{parts}
+    \part $\sum n^3z^n$,
+
+    \part $\sum\dfrac{2^n}{n!}z^n$,
+
+    \part $\sum\dfrac{2^n}{n^2}z^n$,
+
+    \part $\sum\dfrac{n^3}{3^n}z^n$.
+  \end{parts}
+
+  \question Suppose that the coefficients of the power series $\sum a_nz^n$ are integers, infinitely many of which are distinct from zero. Prove that the radius of convergence is at most 1.
+
+  \question Suppose $a_n>0$, $s_n=a_1+\cdots+a_n$, and $\sum a_n$ diverges.
+  \begin{parts}
+    \part Prove that $\sum\dfrac{a_n}{1+a_n}$ diverges.
+
+    \part Prove that
+    \[ \frac{a_{N+1}}{s_{N+1}} + \cdots + \frac{a_{N+k}}{s_{N+k}} \geq 1 - \frac{s_N}{s_{N+k}} \]
+    and deduce that $\sum\dfrac{a_n}{s_n}$ diverges.
+
+    \part Prove that
+    \[ \frac{a_n}{s_n^2} \leq \frac{1}{s_{n-1}} - \frac{1}{s_n} \]
+    and deduce that $\sum\dfrac{a_n}{s_n^2}$ converges.
+
+    \part What can be said about
+    \[ \sum \frac{a_n}{1+na_n} \quad \text{and} \quad \sum\frac{a_n}{1+n^2a_n}? \]
+  \end{parts}
+
+  \question Suppose $a_n>0$ and $\sum a_n$ converges. Put
+  \[ r_n = \sum_{m=n}^\infty a_m. \]
+  \begin{parts}
+    \part Prove that
+    \[ \frac{a_m}{r_m} + \cdots + \frac{a_n}{r_n} > 1 - \frac{r_n}{r_m} \]
+    if $m<n$, and deduce that $\sum\dfrac{a_n}{r_n}$ diverges.
+
+    \part Prove that
+    \[ \frac{a_n}{\sqrt{r_n}} < 2(\sqrt{r_n} - \sqrt{r_{n+1}}) \]
+    and deduce that $\sum\dfrac{a_n}{\sqrt{r_n}}$ converges.
+  \end{parts}
+
+  \question Prove that the Cauchy product of two absolutely convergent series converges absolutely.
+
+  \question If $\{s_n\}$ is a complex sequence, define its arithmetic means $\sigma_n$ by
+  \[ \sigma_n = \frac{s_0 + s_1 + \cdots + s_n}{n+1} \qquad (n=0,1,2,\ldots). \]
+  \begin{parts}
+    \part If $\lim s_n=s$, prove that $\lim\sigma_n=s$.
+
+    \part Construct a sequence $\{s_n\}$ which does not converge, although $\lim\sigma_n=0$.
+
+    \part Can it happen that $s_n>0$ for all $n$ and that $\limsup s_n=\infty$, although $\lim\sigma_n=0$?
+
+    \part Put $a_n=s_n-s_{n-1}$, for $n\geq1$. Show that
+    \[ s_n - \sigma_n = \frac{1}{n+1}\sum_{k=1}^nka_k. \]
+    Assume that $\lim (na_n)=0$ and that $\{\sigma_n\}$ converges. Prove that $\{s_n\}$ converges. [This gives a converse of (a), but under the additional assumption that $na_n\to0$.]
+
+    \part Derive the last conclusion from a weaker hypothesis: Assume $M<\infty$, $\abs{na_n}\leq M$ for all $n$, and $\lim\sigma_n=\sigma$. Prove that $\lim s_n=\sigma$, by completing the following outline:
+
+    If $m<n$, then
+    \[ s_n - \sigma_n = \frac{m+1}{n-m}(\sigma_n - \sigma_m) + \frac{1}{n-m}\sum_{i=m+1}^n (s_n - s_i). \]
+    For these $i$,
+    \[ \abs{s_n - s_i} \leq \frac{(n-i)M}{i+1} \leq \frac{(n-m-1)M}{m+2}. \]
+    Fix $\varepsilon>0$ and associate with each $n$ the integer $m$ that satisfies
+    \[ m \leq \frac{n-\varepsilon}{1+\varepsilon} < m+1. \]
+    Then $(m+1)/(n-m)\leq1/\varepsilon$ and $\abs{s_n-s_i}<M\varepsilon$. Hence
+    \[ \limsup_{n\to\infty}\abs{s_n-\sigma}\leq M\varepsilon. \]
+    Since $\varepsilon$ was arbitrary, $\lim s_n=\sigma$.
+  \end{parts}
+
+  \question Definition 3.21 can be extended to the case in which the $a_n$ lie in some fixed $\R^k$. Absolute convergence is defined as convergence of $\sum\abs{\vec{a}_n}$. Show that Theorems 3.22, 3.23, 3.25(a), 3.33, 3.34, 3.42, 3.45, 3.47, and 3.55 are true in this more general setting. (Only slight modifications are required in any of the proofs.)
+
+  \question Fix a positive number $\alpha$. Choose $x_1>\sqrt{\alpha}$, and define $x_2,x_3,x_4,\ldots,$ by the recursion formula
+  \[ x_{n+1} = \frac{1}{2}\left( x_n + \frac{\alpha}{x_n} \right). \]
+  \begin{parts}
+    \part Prove that $\{x_n\}$ decreases monotonically and that $\lim x_n=\sqrt{\alpha}$.
+
+    \part Put $\varepsilon_n=x_n-\sqrt{\alpha}$ and show that
+    \[ \varepsilon_{n+1} = \frac{\varepsilon_n^2}{2x_n} < \frac{\varepsilon_n^2}{2\sqrt{\alpha}} \]
+    so that, setting $\beta=2\sqrt{\alpha}$,
+    \[ \varepsilon_{n+1} < \beta\left( \frac{\varepsilon_1}{\beta} \right)^{2^n} \qquad (n=1,2,3,\ldots). \]
+
+    \part This is a good algorithm for computing square roots, since the recursion formula is simple and the convergence is extremely rapid. For example, if $\alpha=3$ and $x_1=2$, show that $\varepsilon_1/\beta < \frac{1}{10}$ and that therefore
+    \[ \varepsilon_5 < 4\cdot10^{-16}, \qquad \varepsilon_6 < 4\cdot10^{-32}. \]
+  \end{parts}
+
+  \question Fix $\alpha>1$. Take $x_1>\sqrt{\alpha}$, and define
+  \[ x_{n+1} = \frac{\alpha+x_n}{1+x_n} = x_n + \frac{\alpha-x_n^2}{1+x_n}. \]
+  \begin{parts}
+    \part Prove that $x_1>x_3>x_5>\cdots$.
+
+    \part Prove that $x_2<x_4<x_6<\cdots$.
+
+    \part Prove that $\lim x_n=\sqrt{\alpha}$.
+
+    \part Compare the rapidity of convergence of this process with the one described in Exercise 16.
+  \end{parts}
+
+  \question Replace the recursion formula of Exercise 16 by
+  \[ x_{n+1} = \frac{p-1}{p}x_n + \frac{\alpha}{p}x_n^{-p+1} \]
+  where $p$ is a fixed positive integer, and describe the behaviour of the resulting sequences $\{x_n\}$.
+
+  \question Associate to each sequence $a=\{\alpha_n\}$, in which $\alpha_n$ is 0 or 2, the real number
+  \[ x(a) = \sum_{n=1}^\infty \frac{\alpha_n}{3^n}. \]
+  Prove that the set of all $x(a)$ is precisely the Cantor set described in Sec. 2.44.
+
+  \question Suppose $\{p_n\}$ is a Cauchy sequence in a metric space $X$, and some subsequence $\{p_{n_i}\}$ converges to a point $p\in X$. Prove that the full sequence $\{p_n\}$ converges to $p$.
+
+  \question Prove the following analogue of Theorem 3.10(b): If $\{E_n\}$ is a sequence of closed nonempty and bounded sets in a \emph{complete} metric space $X$, if $E_n\supset E_{n+1}$, and if
+  \[ \lim_{n\to\infty} \diam E_n = 0, \]
+  then $\bigcap_1^\infty E_n$ consists of exactly one point.
+
+  \question Suppose $X$ is a nonempty complete metric space, and $\{G_n\}$ is a sequence of dense open subsets of $X$. Prove Baire's theorem, namely, that $\bigcap_1^\infty G_n$ is not empty. (In fact, it is dense in $X$.) \emph{Hint:} Find a shrinking sequence of neighborhoods $E_n$ such that $\cl{E_n}\subset G_n$, and apply Exercise 21.
+
+  \question Suppose $\{p_n\}$ and $\{q_n\}$ are Cauchy sequences in a metric space $X$. Show that the sequence $\{d(p_n,q_n)\}$ converges. \emph{Hint:} For any $m,n$,
+  \[d(p_n,q_n) \leq d(p_n,p_m) + d(p_m,q_m) + d(q_m,q_n); \]
+  it follows that
+  \[ \abs{d(p_n,q_n) - d(p_m,q_m)} \]
+  is small if $m$ and $n$ are large.
+
+  \question Let $X$ be a metric space.
+  \begin{parts}
+    \part Call two Cauchy sequences $\{p_n\}$, $\{q_n\}$ in $X$ \emph{equivalent} if
+    \[ \lim_{n\to\infty} d(p_n,q_n) = 0. \]
+    Prove that this is an equivalence relation.
+
+    \part Let $X^\ast$ be the set of all equivalence classes so obtained. If $P\in X^\ast$, $Q\in X^\ast$, $\{p_n\}\in P$, $\{q_n\}\in Q$, define
+    \[ \Delta(P, Q) = \lim_{n\to\infty} d(p_n,q_n); \]
+    by Exercise 23, this limit exists. Show that the number $\Delta(P, Q)$ is unchanged if $\{p_n\}$ and $\{q_n\}$ are replaced by equivalent sequences, and hence that $\Delta$ is a distance function in $X^\ast$.
+
+    \part Prove that the resulting metric space $X^\ast$ is complete.
+
+    \part For each $p\in X$, there is a Cauchy sequence all of whose terms are $p$; let $P_p$ be the element of $X^\ast$ which contains this sequence. Prove that
+    \[ \Delta(P_p, P_q) = d(p,q) \]
+    for all $p,q\in X$. In other words, the mapping $\varphi$ defined by $\varphi(p)=P_p$ is an isometry (i.e., a distance-preserving mapping) of $X$ into $X^\ast$.
+
+    \part Prove that $\varphi(X)$ is dense in $X^\ast$, and that $\varphi(X)=X^\ast$ if $X$ is complete. By (d), we may identify $X$ and $\varphi(X)$ and thus regard $X$ as embedded in the complete metric space $X^\ast$. We call $X^\ast$ the \emph{completion} of $X$.
+  \end{parts}
+
+  \question Let $X$ be the metric space whose points are the rational numbers, with the metric $d(x,y)=\abs{x-y}$. What is the completion of this space? (Compare Exercise 24.)
+\end{questions}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "rudin"
+%%% End:
