@@ -44,3 +44,4 @@ Please make use of the following macros. Any other common commands may be turned
  * Closure: `\cl{E}` produces the closure of the set `E`
  * Interior: `\interior{E}` produces the interior of the set `E`
  * Complement: `\comp{E}` produces the complement of the set `E`
+ * Diameter: `\diam{E}` produces `diam E`
