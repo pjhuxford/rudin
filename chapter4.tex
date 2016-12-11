@@ -71,6 +71,15 @@
   Prove that $f$ is continuous.
 
   \emph{Hint:} If $x_n\to x_0$ but $f(x_n)>r>f(x_0)$ for some $r$ and all $n$, then $f(t_n)=r$ for some $t_n$ between $x_0$ and $x_n$; thus $t_n\to x_0$. Find a contradiction. (N. J. Fine, Amer. Math. Monthly, vol. 73, 1966, p. 782.)
+  \begin{solution}
+    Suppose that $f$ is not continuous at $x_0$. Consider a sequence $y_n\to x_0$ with $f(y_n)\not\to f(x_0)$. Without loss of generality infinitely many $y_n$ satisfy $f(y_n)>f(x_0)$. Let $(y_{n_k})$ denote the subsequence of $(y_n)$ consisting of all such terms. If only finitely many of the $y_n$ satisfy $f(y_n)<f(x_0)$, then we must have $f(y_{n_k})\not\to f(x_0)$.
+
+    Otherwise we may define $(y_{m_k})$ to be the subsequence of $(y_n)$ consisting of all terms with $f(y_n)<f(x_0)$. Suppose that $f(y_{n_k})\to f(x_0)$ and $f(y_{m_k})\to f(x_0)$. Then every neighborhood of $f(x_0)$ contains all but finitely many terms $f(y_{n_k})$, and all but finitely many terms $f(y_{m_k})$. Therefore every neighbourhood of $f(x_0)$ contains all but finitely many terms $f(y_n)$. This contradicts $f(y_n)\not\to f(x_0)$, hence one of $(f(y_{n_k}))$ and $(f(y_{m_k}))$ must not converge to $f(x_0)$.
+
+    Without loss of generality there is a sequence $x_n\to x_0$ with $f(x_n)>f(x_0)$ for all $n$, and $f(x_n)\not\to f(x_0)$. So there is an $\varepsilon>0$ where $f(x_n)>f(x_0)+\varepsilon$ for all $n$. Let $r$ be rational with
+    \[ f(x_n) > f(x_0) + \varepsilon > r > f(x_0). \]
+    Then for each $n$, by the intermediate value property, $f(t_n)=r$ for some $t_n$ between $x_0$ and $x_n$; thus $t_n\to x_0$. So $x_0$ is a limit point of $f^{-1}(\{r\})$, and $f(x_0)\neq r$, which contradicts $f^{-1}(\{r\})$ being closed. This is a contradiction, hence $f$ is continuous.
+  \end{solution}
 
   \question If $E$ is a nonempty subset of a metric space $X$, define the distance from $x\in X$ to $E$ by
   \[ \rho_E(x) = \inf_{x\in E} d(x,z). \]
