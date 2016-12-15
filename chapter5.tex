@@ -1,1 +1,234 @@
 \section{Differentiation}
+
+\begin{questions}
+  \question Let $f$ be defined for all real $x$, and suppose that
+  \[ \abs{f(x) - f(y)} \leq (x-y)^2 \]
+  for all real $x$ and $y$. Prove that $f$ is constant.
+
+  \question Suppose $f'(x)>0$ in $(a,b)$. Prove that $f$ is strictly increasing in $(a,b)$, and let $g$ be its inverse function. Prove that $g$ is differentiable, and that
+  \[ g'(f(x)) = \frac{1}{f'(x)} \qquad (a<x<b). \]
+
+  \question Suppose $g$ is a real function on $\R^1$, with bounded derivative (say $\abs{g'}\leq M$). Fix $\varepsilon>0$, and define $f(x)=x+\varepsilon g(x)$. Prove that $f$ is one-to-one if $\varepsilon$ is small enough. (A set of admissible values of $\varepsilon$ can be determined which depends only on $M$.)
+
+  \question If
+  \[ C_0 + \frac{C_1}{2} + \cdots +\frac{C_{n-1}}{n} + \frac{C_n}{n+1} = 0, \]
+  where $C_0,\ldots,C_n$ are real constants, prove that the equation
+  \[ C_0 + C_1x + \cdots + C_{n-1}x^{n-1} + C_nx^n = 0 \]
+  has at least one real root between 0 and 1.
+
+  \question Suppose $f$ is defined and differentiable for every $x>0$, and $f'(x)\to0$ as $x\to+\infty$. Put $g(x)=f(x+1)-f(x)$. Prove that $g(x)\to0$ as $x\to+\infty$.
+
+  \question Suppose
+  \begin{enumerate}[label=(\alph*)]
+  \item $f$ is continuous for $x\geq0$,
+  \item $f'(x)$ exists for $x>0$,
+  \item $f(0)=0$,
+  \item $f'$ is monotonically increasing.
+  \end{enumerate}
+  Put
+  \[ g(x) = \frac{f(x)}{x} \qquad (x>0) \]
+  and prove that $g$ is monotonically increasing.
+
+  \question Suppose $f'(x)$, $g'(x)$ exist, $g'(x)\neq0$, and $f(x)=g(x)=0$. Prove that
+  \[ \lim_{t\to x} \frac{f(t)}{g(t)} = \frac{f'(x)}{g'(x)}. \]
+  (This holds also complex functions.)
+
+  \question Suppose $f'$ is continuous on $[a,b]$ and $\varepsilon>0$. Prove that there exists $\delta>0$ such that
+
+  \[ \abs*{\frac{f(t)-f(x)}{t-x} - f'(x)} < \varepsilon \]
+
+  whenever $0<\abs{t-x}<\delta$, $a\leq x\leq b$, $a\leq t\leq b$. (This could be expressed by saying that $f$ is \emph{uniformly differentiable} on $[a,b]$ if $f'$ is continuous on $[a,b]$.) Does this hold for vector-valued functions too?
+
+  \question Let $f$ be a continuous real function on $\R^1$, of which it is known that $f'(x)$ exists for all $x\neq0$ and that $f'(x)\to3$ as $x\to0$. Does it follow that $f'(0)$ exists?
+
+  \question Suppose $f$ and $g$ are complex differentiable functions on $(0,1)$, $f(x)\to0$, $g(x)\to0$, $f'(x)\to A$, $g'(x)\to B$ as $x\to0$, where $A$ and $B$ are complex numbers, $B\neq0$. Prove that
+  \[ \lim_{x\to0} \frac{f(x)}{g(x)} = \frac{A}{B}. \]
+  Compare with Example 5.18. \emph{Hint:}
+  \[ \frac{f(x)}{g(x)} = \left\{ \frac{f(x)}{x} - A \right\} \cdot \frac{x}{g(x)} + A\cdot\frac{x}{g(x)}. \]
+  Apply Theorem 5.13 to the real and imaginary parts of $f(x)/x$ and $g(x)/x$.
+
+  \question Suppose $f$ is defined in a neighborhood of $x$, and suppose $f''(x)$ exists. Show that
+  \[ \lim_{h\to0} \frac{f(x+h) + f(x-h) - 2f(x)}{h^2} = f''(x). \]
+  Show by an example that the limit may exist even if $f''(x)$ does not.
+
+  \emph{Hint:} Use Theorem 5.13.
+
+  \question If $f(x)=\abs{x}^3$, compute $f'(x)$, $f''(x)$ for all real $x$, and show that $f^{(3)}(0)$ does not exist.
+
+  \question Suppose $a$ and $c$ are real numbers, $c>0$, and $f$ is defined on $[-1,1]$ by
+  \[ f(x) =
+    \begin{cases}
+      x^a\sin(\abs{x}^{-c}) & \text{(if $x\neq0$),} \\
+      0 & \text{(if $x=0$).}
+    \end{cases}
+  \]
+  Prove the following statements:
+  \begin{parts}
+    \part $f$ is continuous if and only if $a>0$.
+    \part $f'(0)$ exists if and only if $a>1$.
+    \part $f'$ is bounded if and only if $a\geq1+c$.
+    \part $f'$ is continuous if and only if $a>1+c$.
+    \part $f''(0)$ exists if and only if $a>2+c$.
+    \part $f''$ is bounded if and only if $a\geq2+2c$.
+    \part $f''$ is continuous if and only if $a>2+2c$.
+  \end{parts}
+
+  \question Let $f$ be a differentiable real function defined in $(a,b)$. Prove that $f$ is convex if and only if $f'$ is monotonically increasing. Assume next that $f''(x)$ exists for every $x\in(a,b)$, and prove that $f$ is convex if and only if $f''(x)\geq0$ for all $x\in(a,b)$.
+
+  \question Suppose $a\in\R^1$, $f$ is a twice-differentiable real function on $(a,\infty)$, and $M_0$, $M_1$, $M_2$ are the least upper bounds of $\abs{f(x)}$, $\abs{f'(x)}$, $\abs{f''(x)}$, respectively, on $(a,\infty)$. Prove that
+  \[ M_1^2 \leq 4M_0M_2. \]
+
+  \emph{Hint:} If $h>0$, Taylor's theorem shows that
+  \[ f'(x) = \frac{1}{2h}[f(x+2h) - f(x)] - hf''(\xi) \]
+  for some $\xi\in(x,x+2h)$. Hence
+  \[ \abs{f'(x)} \leq hM_2 + \frac{M_0}{h}. \]
+  To show that $M_1^2=4M_0M_2$ can actually happen, take $a=-1$, define
+  \[ f(x) =
+    \begin{cases}
+      2x^2 - 1 & (-1<x<0), \\
+      \dfrac{x^2-1}{x^2+1} & (0\leq x<\infty),
+    \end{cases}
+  \]
+  and show that $M_0=1$, $M_1=4$, $M_2=4$.
+
+  Does $M_1^2\leq 4M_0M_2$ hold for vector-valued functions too?
+
+  \question Suppose $f$ is twice-differentiable on $(0,\infty)$, $f''$ is bounded on $(0,\infty)$, and $f(x)\to0$ as $x\to\infty$. Prove that $f'(x)\to0$ as $x\to\infty$.
+
+  \emph{Hint:} Let $a\to\infty$ in Exercise 15.
+
+  \question Suppose $f$ is a real, three times differentiable function on $[-1,1]$, such that
+  \[ f(-1) = 0, \qquad f(0) = 0, \qquad f(1) = 1, \qquad f'(0) = 0. \]
+  Prove that $f^{(3)}(x)\geq3$ for some $x\in(-1,1)$.
+
+  Note that equality holds for $\frac{1}{2}(x^3+x^2)$.
+
+  \emph{Hint:} Use Theorem 5.15, with $\alpha=0$ and $\beta=\pm1$, to show that there exist $s\in(0,1)$ and $t\in(-1,0)$ such that
+  \[ f^{(3)}(s) + f^{(3)}(t) = 6. \]
+
+  \question Suppose $f$ is a real function on $[a,b]$, $n$ is a positive integer, and $f^{(n-1)}$ exists for every $t\in[a,b]$. Let $\alpha$, $\beta$, and $P$ be as in Taylor's theorem (5.15). Define
+  \[ Q(t) = \frac{f(t)-f(\beta)}{t-\beta} \]
+  for $t\in[a,b]$, $t\neq\beta$, differentiate
+  \[ f'(t) - f(\beta) = (t-\beta)Q(t) \]
+  $n-1$ times at $t=\alpha$, and derive the following version of Taylor's theorem:
+  \[ f(\beta) = P(\beta) + \frac{Q^{(n-1)}(\alpha)}{(n-1)!}(\beta-\alpha)^n. \]
+
+  \question Suppose $f$ is defined in $(-1,1)$ and $f'(0)$ exists. Suppose $-1<\alpha_n<\beta_n<1$, $\alpha_n\to0$, and $\beta_n\to0$ as $n\to\infty$. Define the difference quotients
+  \[ D_n = \frac{f(\beta_n)-f(\alpha_n)}{\beta_n-\alpha_n}. \]
+  Prove the following statements:
+  \begin{parts}
+  \part If $\alpha_n<0<\beta_n$, then $\lim D_n = f'(0)$.
+  \part If $0<\alpha_n<\beta_n$ and $\{\beta_n/(\beta_n-\alpha_n)\}$ is bounded, then $\lim D_n=f'(0)$.
+  \part If $f'$ is continuous in $(-1,1)$, then $\lim D_n = f'(0)$.
+  \end{parts}
+  Give an example in which $f$ is differentiable in $(-1,1)$ (but $f'$ is not continuous at 0) and in which $\alpha_n$, $\beta_n$ tend to 0 in such a way that $\lim D_n$ exists but is different from $f'(0)$.
+
+  \question Formulate and prove an inequality which follows from Taylor's theorem and which remains valid for vector-valued functions.
+
+  \question Let $E$ be a closed subset of $\R^1$. We saw in Exercise 22, Chap. 4, that there is a real continuous function $f$ on $\R^1$ whose zero set is $E$. Is it possible, for each closed set $E$, to find such an $f$ which is differentiable on $\R^1$, or one which is $n$ times differentiable, or even one which has derivatives of all orders on $\R^1$?
+
+  \question Suppose $f$ is a real function on $(-\infty,\infty)$. Call $x$ a \emph{fixed point} of $f$ if $f(x)=x$.
+  \begin{parts}
+    \part If $f$ is differentiable and $f'(t)\neq1$ for every real $t$, prove that $f$ has at most one fixed point.
+
+    \part Show that the function $f$ defined by
+    \[ f(t) = t + (1+e^t)^{-1} \]
+    has no fixed point, although $0<f'(t)<1$ for all real $t$.
+
+    \part However, if there is a constant $A<1$ such that $\abs{f'(t)}\leq A$ for all real $t$, prove that a fixed point $x$ of $f$ exists, and that $x=\lim x_n$, where $x_1$ is an arbitrary real number and
+    \[ x_{n+1} = f(x_n) \]
+    for $n=1,2,3,\ldots$.
+
+    \part Show that the process described in (c) can be visualized by the zig-zag path
+    \[ (x_1,x_2) \to (x_2,x_2) \to (x_2,x_3) \to (x_3,x_3) \to (x_3,x_4) \to \cdots. \]
+  \end{parts}
+
+  \question The function $f$ defined by
+  \[ f(x) = \frac{x^3+1}{3} \]
+  has three fixed points, say $\alpha$, $\beta$, $\gamma$, where
+  \[ -2<\alpha<-1, \qquad 0<\beta<1, \qquad 1<\gamma<2. \]
+  For arbitrarily chosen $x_1$, define $\{x_n\}$ by setting $x_{n+1}=f(x_n)$.
+  \begin{parts}
+    \part If $x_1<\alpha$, prove that $x_n\to-\infty$ as $n\to\infty$.
+
+    \part If $\alpha<x_1<\gamma$, prove that $x_n\to\beta$ as $n\to\infty$.
+
+    \part If $\gamma<x_1$, prove that $x_n\to+\infty$ as $n\to\infty$.
+  \end{parts}
+
+  Thus $\beta$ can be located by this method, but $\alpha$ and $\gamma$ cannot.
+
+  \question The process described in part (c) of Exercise 22 can of course also be applied to functions that map $(0,\infty)$ to $(0,\infty)$.
+
+  Fix some $\alpha>1$, and put
+  \[ f(x) = \frac{1}{2}\left( x + \frac{\alpha}{x} \right), \qquad g(x) = \frac{\alpha+x}{1+x}. \]
+
+  Both $f$ and $g$ have $\sqrt{\alpha}$ as their only fixed point in $(0,\infty)$. Try to explain, on the basis of properties of $f$ and $g$, why the convergence in Exercise 16, Chap. 3, is so much more rapid than it is in Exercise 17. (Compare $f'$ and $g'$, draw the zig-zags suggested in Exercise 22.)
+
+  Do the same when $0<\alpha<1$.
+
+  \question Suppose $f$ is twice differentiable on $[a,b]$, $f(a)<0$, $f(b)>0$, $f'(x)\geq\delta>0$, and $0\leq f''(x)\leq M$ for all $x\in[a,b]$. Let $\xi$ be the unique point in $(a,b)$ at which $f(\xi)=0$.
+
+  Complete the details in the following outline of \emph{Newton's method} for computing $\xi$.
+  \begin{parts}
+    \part Choose $x_1\in(\xi,b)$, and define $\{x_n\}$ by
+    \[ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}. \]
+    Interpret this geometrically, in terms of a tangent to the graph of $f$.
+
+    \part Prove that $x_{n+1}<x_n$, and that
+    \[ \lim_{n\to\infty} x_n = \xi. \]
+
+    \part Use Taylor's theorem to showthat
+    \[ x_{n+1} - \xi = \frac{f''(t_n)}{2f'(x_n)}(x_n-\xi)^2 \]
+    for some $t_n\in(\xi,x_n)$.
+
+    \part If $A=M/2\delta$, deduce that
+    \[ 0\leq x_{n+1} - \xi \leq \frac{1}{A}[A(x_1-\xi)]^{2^n}. \]
+    (Compare with Exercises 16 and 18, Chap. 3.)
+
+    \part Show that Newton's method amounts to finding a fixed point of the function $g$ defined by
+    \[ g(x) = x - \frac{f(x)}{f'(x)}. \]
+    How does $g'(x)$ behave for $x$ near $\xi$?
+
+    \part Put $f(x)=x^{1/3}$ on $(-\infty,\infty)$ and try Newton's method. What happens?
+  \end{parts}
+
+  \question Suppose $f$ is differentiable on $[a,b]$, $f(a)=0$, and there is a real number $A$ such that $\abs{f'(x)}\leq A\abs{f(x)}$ on $[a,b]$. Prove that $f(x)=0$ for all $x\in[a,b]$. \emph{Hint:} Fix $x_0\in[a,b]$, let
+  \[ M_0 = \sup\abs{f(x)}, \qquad M_1 = \sup\abs{f'(x)} \]
+  for $a\leq x\leq x_0$. For any such $x$,
+  \[ \abs{f(x)} \leq M_1(x_0-a) \leq A(x_0-a)M_0. \]
+  Hence $M_0=0$ if $A(x_0-a)<1$. That is, $f=0$ on $[a,x_0]$. Proceed.
+
+  \question Let $\phi$ be a real function defined on a rectangle $R$ in the plane, given by $a\leq x\leq b$, $\alpha\leq y\leq\beta$. A \emph{solution} of the initial-value problem
+  \[ y' = \phi(x,y), \qquad y(a) = c \qquad (\alpha\leq c\leq\beta) \]
+  is, by definition, a differentiable function $f$ on $[a,b]$ such that $f(a)=c$, $\alpha\leq f(x)\leq\beta$, and
+  \[ f'(x) = \phi(x,f(x)) \qquad (a\leq x\leq b). \]
+  Prove that such a problem has at most one solution if there is a constant $A$ such that
+  \[ \abs{\phi(x,y_2)-\phi(x,y_1)} \leq A\abs{y_2-y_1} \]
+  whenever $(x,y_1)\in R$ and $(x,y_2)\in R$.
+
+  \emph{Hint:} Apply Exercise 26 to the difference of two solutions. Note that this uniqueness theorem does not hold for the inital-value problem
+  \[ y' = y^{1/2}, \qquad y(0) = 0, \]
+  which has two solutions: $f(x)=0$ and $f(x)=x^2/4$. Find all other solutions.
+
+  \question Formulate and prove an analogous uniqueness theorem for systems for differential equations of the form
+  \[ y_j' = \phi_j(x,y_1,\ldots,y_k), \qquad y_j(a) = c_j \qquad (j=1,\ldots,k). \]
+  Note that this can be rewritten in the form
+  \[ \vec{y}' = \vec{\phi}(x,y), \qquad \vec{y}(a)=\vec{c} \]
+  where $\vec{y}=(y_1,\ldots,y_k)$ ranges over a $k$-cell, $\vec{\phi}$ is the mapping of a $(k+1)$-cell into the Euclidean $k$-space whose components are the functions $\phi_1,\ldots,\phi_k$, and $\vec{c}$ is the vector $(c_1,\ldots,c_k)$. Use Exercise 26, for vector-valued functions.
+
+  \question Specialize Exercise 28 by considering the system
+  \begin{align*}
+    y_j' &= y_{j+1} \qquad (j=1,\ldots,k-1), \\
+    y_k' &= f(x) - \sum_{j=1}^k g_j(x)y_j,
+  \end{align*}
+  where $f,g_1,\ldots,g_k$ are continuous real functions on $[a,b]$, and derive a uniqueness theorem for solutions of the equation
+  \[ y^{(k)} + g_k(x)y^{(k-1)} + \cdots + g_2(x)y' + g_1(x)y = f(x), \]
+  subject to initial conditions
+  \[ y(a)=c_1, \qquad y'(a) = c_2, \quad \ldots, \quad y^{(k-1)}(a) = c_k. \]
+\end{questions}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "rudin"
+%%% End:
