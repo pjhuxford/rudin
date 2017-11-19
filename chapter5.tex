@@ -4,19 +4,45 @@
   \question Let $f$ be defined for all real $x$, and suppose that
   \[ \abs{f(x) - f(y)} \leq (x-y)^2 \]
   for all real $x$ and $y$. Prove that $f$ is constant.
+  \begin{solution}
+    If $x\neq y$, we have
+    \[ \abs*{\frac{f(x)-f(y)}{x-y}} \leq \abs{x-y}. \]
+    Hence for all real $x$
+    \[ \lim_{t\to x} \frac{f(t)-f(x)}{t-x} = 0. \]
+    So $f$ is differentiable, and $f'(x)=0$ for all real $x$, hence $f$ is constant.
+  \end{solution}
 
   \question Suppose $f'(x)>0$ in $(a,b)$. Prove that $f$ is strictly increasing in $(a,b)$, and let $g$ be its inverse function. Prove that $g$ is differentiable, and that
   \[ g'(f(x)) = \frac{1}{f'(x)} \qquad (a<x<b). \]
+  \begin{solution}
+    Suppose that $a<x_1<x_2<b$. By the mean value theorem, there is a point $x\in(x_1,x_2)$ with
+    \[ f(x_2)-f(x_1)=(x_2-x_1)f'(x)>0. \]
+    Thus $f$ is strictly increasing in $(a,b)$, and so has an inverse function $g$. If $a<x<b$, then $g(f(x))=x$. Applying the chain rule gives us $g'(f(x))f'(x)=1$, and hence
+    \[ g'(f(x)) = \frac{1}{f'(x)} \]
+    whenever $a<x<b$.
+  \end{solution}
 
   \question Suppose $g$ is a real function on $\R^1$, with bounded derivative (say $\abs{g'}\leq M$). Fix $\varepsilon>0$, and define $f(x)=x+\varepsilon g(x)$. Prove that $f$ is one-to-one if $\varepsilon$ is small enough. (A set of admissible values of $\varepsilon$ can be determined which depends only on $M$.)
+  \begin{solution}
+    If $M=0$, then $g'=0$, and so $f'=1$ for any $\varepsilon>0$. If $M>0$, then let $0<\varepsilon<1/M$. Note that $f'=1+\varepsilon g'$. If $x\in\R$, then $g'(x)\geq-M$, and hence $f'(x)\geq1-\varepsilon M>0$. In each case, $\varepsilon$ can be chosen to ensure that $f'(x)>0$ for all $x\in\R$. By Exercise \textbf{2}, $f$ is strictly increasing and hence one-to-one.
+  \end{solution}
 
   \question If
   \[ C_0 + \frac{C_1}{2} + \cdots +\frac{C_{n-1}}{n} + \frac{C_n}{n+1} = 0, \]
   where $C_0,\ldots,C_n$ are real constants, prove that the equation
   \[ C_0 + C_1x + \cdots + C_{n-1}x^{n-1} + C_nx^n = 0 \]
   has at least one real root between 0 and 1.
+  \begin{solution}
+    If $f(x)=C_0x+\frac{C_1}{2}x^2+\cdots+\frac{C_{n-1}}{n}+\frac{C_n}{n+1}x^{n+1}$, then $f(0)=f(1)=0$. Hence by the mean value theorem there is an $x\in(0,1)$ with
+    \[ C_0+C_1x+\cdots+C_{n-1}x^{n-1}+C_nx^n = (1-0)f'(x) = f(1)-f(0) = 0. \]
+  \end{solution}
 
   \question Suppose $f$ is defined and differentiable for every $x>0$, and $f'(x)\to0$ as $x\to+\infty$. Put $g(x)=f(x+1)-f(x)$. Prove that $g(x)\to0$ as $x\to+\infty$.
+  \begin{solution}
+    For each $x>0$, there is a point $y\in(x,x+1)$ with
+    \[ g(x) = f(x+1)-f(x) = (1-0)f'(y) = f'(y). \]
+    Since $f'(x)\to0$ as $x\to+\infty$, it follows that $g(x)\to0$ as $x\to+\infty$.
+  \end{solution}
 
   \question Suppose
   \begin{enumerate}[label=(\alph*)]
@@ -28,6 +54,11 @@
   Put
   \[ g(x) = \frac{f(x)}{x} \qquad (x>0) \]
   and prove that $g$ is monotonically increasing.
+  \begin{solution}
+    If $x>0$, then by the mean value theorem there is a point $y\in(0,x)$ with $f(x)=f(x)-f(0)=(x-0)f'(y)=xf'(y)$. This implies that
+    \[ g'(x) = \frac{xf'(x)-f(x)}{x^2} \geq \frac{xf'(y)-f(x)}{x^2} = 0.  \]
+    Hence $g$ is monotonically increasing.
+  \end{solution}
 
   \question Suppose $f'(x)$, $g'(x)$ exist, $g'(x)\neq0$, and $f(x)=g(x)=0$. Prove that
   \[ \lim_{t\to x} \frac{f(t)}{g(t)} = \frac{f'(x)}{g'(x)}. \]
