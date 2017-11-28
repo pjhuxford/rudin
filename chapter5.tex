@@ -62,27 +62,69 @@
 
   \question Suppose $f'(x)$, $g'(x)$ exist, $g'(x)\neq0$, and $f(x)=g(x)=0$. Prove that
   \[ \lim_{t\to x} \frac{f(t)}{g(t)} = \frac{f'(x)}{g'(x)}. \]
-  (This holds also complex functions.)
+  (This holds also for complex functions.)
+  \begin{solution}
+    \[ \lim_{t\to x} \frac{f(t)}{g(t)} = \lim_{t\to x} \frac{f(t)-f(x)}{g(t)-g(x)} = \lim_{t\to x} \frac{f(t)-f(x)}{t-x} \lim_{t\to x} \frac{t-x}{g(t)-g(x)} = \frac{f'(x)}{g'(x)}. \]
+  \end{solution}
 
   \question Suppose $f'$ is continuous on $[a,b]$ and $\varepsilon>0$. Prove that there exists $\delta>0$ such that
 
   \[ \abs*{\frac{f(t)-f(x)}{t-x} - f'(x)} < \varepsilon \]
 
   whenever $0<\abs{t-x}<\delta$, $a\leq x\leq b$, $a\leq t\leq b$. (This could be expressed by saying that $f$ is \emph{uniformly differentiable} on $[a,b]$ if $f'$ is continuous on $[a,b]$.) Does this hold for vector-valued functions too?
+  \begin{solution}
+    Note that $f'$ is uniformly continuous on $[a,b]$, because $[a,b]$ is compact. Let $\delta>0$ be such that $\abs{f'(s)-f'(x)}<\varepsilon$ whenever $x,s\in[a,b]$ and $\abs{s-x}<\delta$. Suppose $x,t\in[a,b]$ satsify $0<\abs{t-x}<\delta$. By the mean value theorem, there exists $s$ strictly between $x$ and $t$ such that $f(t)-f(x)=(t-x)f'(s)$. Observe that $s\in[a,b]$ and $\abs{s-x}<\delta$. Hence
+    \[ \abs*{\frac{f(t)-f(x)}{t-x} - f'(x)} = \abs{f'(s) - f'(x)} < \varepsilon. \]
+    We now prove the result for vector-valued functions. Suppose $\vec{f}\colon[a,b]\to\R^k$ has continuous derivative on $[a,b]$ and $\varepsilon>0$. If $\vec{f}$ has components $f_1$, \ldots, $f_k$, then $\vec{f}'$ has components $f_1'$, \ldots, $f_k'$, and these are all continuous on $[a,b]$. By the earlier part of the exercise, for each $j=1,\ldots,k$ there exists $\delta_j>0$ such that
+    \[ \abs*{\frac{f_j(t)-f_j(x)}{t-x} - f_j'(x)} < \frac{\varepsilon}{k} \]
+    whenever $x,t\in[a,b]$ satisfy $0<\abs{t-x}<\delta_j$. Define $\delta=\min\{\delta_1,\ldots,\delta_k\}>0$. If $x,t\in[a,b]$ satisfy $0<\abs{t-x}<\delta$, then
+    \[ \abs*{\frac{\vec{f}(t)-\vec{f}(x)}{t-x} - \vec{f}'(x)} \leq \sum_{j=1}^k \abs*{\frac{f_j(t)-f_j(x)}{t-x} - f_j'(x)} < \sum_{j=1}^k \frac{\varepsilon}{k} = \varepsilon. \]
+  \end{solution}
 
   \question Let $f$ be a continuous real function on $\R^1$, of which it is known that $f'(x)$ exists for all $x\neq0$ and that $f'(x)\to3$ as $x\to0$. Does it follow that $f'(0)$ exists?
+  \begin{solution}
+    Yes, by L'Hospital's rule
+    \[ f'(0) = \lim_{t\to 0} \frac{f(t)-f(0)}{t} = \lim_{t\to 0} f'(t) = 3. \]
+  \end{solution}
 
   \question Suppose $f$ and $g$ are complex differentiable functions on $(0,1)$, $f(x)\to0$, $g(x)\to0$, $f'(x)\to A$, $g'(x)\to B$ as $x\to0$, where $A$ and $B$ are complex numbers, $B\neq0$. Prove that
   \[ \lim_{x\to0} \frac{f(x)}{g(x)} = \frac{A}{B}. \]
   Compare with Example 5.18. \emph{Hint:}
   \[ \frac{f(x)}{g(x)} = \left\{ \frac{f(x)}{x} - A \right\} \cdot \frac{x}{g(x)} + A\cdot\frac{x}{g(x)}. \]
   Apply Theorem 5.13 to the real and imaginary parts of $f(x)/x$ and $g(x)/x$.
+  \begin{solution}
+    Let $f$ and $g$ have real and imaginary parts given by $f(x)=f_1(x)+if_2(x)$ and $g(x)=g_1(x)+ig_2(x)$. Then $f'(x)=f_1'(x)+if_2'(x)$, $g'(x)=g_1'(x)+ig_2'(x)$ for $x\in(0,1)$. By L'Hospital's rule for real-valued functions
+    \[ \lim_{x\to0} \frac{f(x)}{x} = \lim_{x\to0} \frac{f_1(x)}{x} + i\lim_{x\to0} \frac{f_2(x)}{x} = \lim_{x\to0} f_1'(x) + i\lim_{x\to0} f_2'(x) = \lim_{x\to0} f'(x) = A. \]
+    Similarly $g(x)/x\to B$ as $x\to0$. Hence
+    \[ \lim_{x\to0} \frac{f(x)}{g(x)} = \lim_{x\to0} \frac{f(x)/x}{g(x)/x} = \frac{A}{B}. \]
+  \end{solution}
 
   \question Suppose $f$ is defined in a neighborhood of $x$, and suppose $f''(x)$ exists. Show that
   \[ \lim_{h\to0} \frac{f(x+h) + f(x-h) - 2f(x)}{h^2} = f''(x). \]
   Show by an example that the limit may exist even if $f''(x)$ does not.
 
   \emph{Hint:} Use Theorem 5.13.
+  \begin{solution}
+    By L'Hospital's rule
+    \begin{align*}
+      &\phantom{{}={}}\lim_{h\to0} \frac{f(x+h) + f(x-h) - 2f(x)}{h^2} \\
+      &= \lim_{h\to0} \frac{f'(x+h)-f'(x-h)}{2h} \\
+      &= \frac{1}{2}\lim_{h\to0} \frac{f'(x+h)-f'(x)}{h} + \frac{1}{2}\lim_{h\to0} \frac{f'(x)-f'(x-h)}{h} \\
+      &= \frac{1}{2}f''(x) + \frac{1}{2}f''(x) \\
+      &= f''(x).
+    \end{align*}
+    If $f$ is defined by
+    \[ f(x) =
+      \begin{cases}
+        1 & \text{if $x>0$} \\
+        0 & \text{if $x=0$} \\
+        -1 & \text{if $x<0$,}
+      \end{cases}
+    \]
+    then
+    \[ \lim_{h\to0} \frac{f(h)+f(-h)-2f(0)}{h^2} = 0. \]
+    However $f$ is not continuous at 0, let alone twice differentiable.
+  \end{solution}
 
   \question If $f(x)=\abs{x}^3$, compute $f'(x)$, $f''(x)$ for all real $x$, and show that $f^{(3)}(0)$ does not exist.
 
